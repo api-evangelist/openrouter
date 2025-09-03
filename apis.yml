@@ -36,3 +36,38 @@ maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
 specificationVersion: '0.19'
+common:
+  - name: OpenRouter
+    description: 'null'
+    url: https://openrouter.ai/
+    type: Website
+  - name: Models | OpenRouter
+    description: 'null'
+    url: https://openrouter.ai/models
+    type: Models
+  - name: OpenRouter Status
+    description: 'null'
+    url: https://status.openrouter.ai/
+    type: Status
+  - name: >-
+      OpenRouter Quickstart Guide | Developer Documentation | OpenRouter |
+      Documentation
+    description: 'null'
+    url: https://openrouter.ai/docs/quickstart
+    type: GettingStarted
+  - name: OpenRouter FAQ | Developer Documentation | OpenRouter | Documentation
+    description: 'null'
+    url: https://openrouter.ai/docs/faq
+    type: FAQ
+  - name: Models | OpenRouter
+    description: 'null'
+    url: https://openrouter.ai/models?fmt=table
+    type: Pricing
+  - name: Models | OpenRouter
+    description: 'null'
+    url: https://openrouter.ai/privacy
+    type: PrivacyPolicy
+  - name: Models | OpenRouter
+    description: 'null'
+    url: https://openrouter.ai/terms
+    type: TermsOfService
