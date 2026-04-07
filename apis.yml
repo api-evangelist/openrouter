@@ -5,10 +5,10 @@ apis:
   - aid: openrouter:openrouter
     name: OpenRouter
     tags:
-      - Router
-      - Gateway
       - Artificial Intelligence
+      - Gateway
       - Large Language Models
+      - Router
     humanURL: ' https://openrouter.ai/'
     baseURL: https://openrouter.ai/api/v1
     properties:
@@ -50,8 +50,8 @@ apis:
   - aid: openrouter:models-api
     name: OpenRouter Models API
     tags:
-      - Models
       - Discovery
+      - Models
     humanURL: https://openrouter.ai/docs/api/api-reference/models/get-models
     baseURL: https://openrouter.ai/api/v1
     properties:
@@ -70,8 +70,8 @@ apis:
     name: OpenRouter Generation API
     tags:
       - Generation
-      - Usage
       - Stats
+      - Usage
     humanURL: https://openrouter.ai/docs/api/reference/overview
     baseURL: https://openrouter.ai/api/v1
     properties:
@@ -107,10 +107,10 @@ apis:
       automatic key disabling when limits are exceeded.
 name: OpenRouter
 tags:
-  - Router
-  - Gateway
   - Artificial Intelligence
+  - Gateway
   - Large Language Models
+  - Router
 type: Contract
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
