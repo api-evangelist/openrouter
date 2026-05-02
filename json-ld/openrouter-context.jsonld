@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "openrouter": "https://openrouter.ai/ns#",
+    "Model": "openrouter:Model",
+    "Provider": "openrouter:Provider",
+    "ChatCompletion": "openrouter:ChatCompletion",
+    "Generation": "openrouter:Generation",
+    "id": "@id",
+    "name": "schema:name",
+    "description": "schema:description",
+    "context_length": {
+      "@id": "openrouter:contextLength",
+      "@type": "xsd:integer"
+    },
+    "pricing": "openrouter:pricing",
+    "prompt": "openrouter:promptPrice",
+    "completion": "openrouter:completionPrice",
+    "top_provider": "openrouter:topProvider",
+    "architecture": "openrouter:architecture",
+    "messages": "openrouter:messages",
+    "role": "openrouter:role",
+    "content": "schema:text",
+    "model": "openrouter:model",
+    "usage": "openrouter:usage",
+    "prompt_tokens": "openrouter:promptTokens",
+    "completion_tokens": "openrouter:completionTokens",
+    "total_tokens": "openrouter:totalTokens",
+    "finish_reason": "openrouter:finishReason"
+  }
+}

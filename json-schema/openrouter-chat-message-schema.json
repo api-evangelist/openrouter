@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/json-schema/openrouter-chat-message-schema.json",
+  "title": "OpenRouter Chat Message",
+  "description": "A single message exchanged in an OpenRouter chat completion request or response, compatible with the OpenAI chat completions schema.",
+  "type": "object",
+  "required": ["role"],
+  "properties": {
+    "role": {
+      "type": "string",
+      "enum": ["system", "user", "assistant", "tool"],
+      "description": "The role of the message author."
+    },
+    "content": {
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["text", "image_url"]
+              },
+              "text": { "type": "string" },
+              "image_url": {
+                "type": "object",
+                "properties": {
+                  "url": { "type": "string", "format": "uri" }
+                }
+              }
+            },
+            "required": ["type"]
+          }
+        }
+      ],
+      "description": "Message content as a plain string or array of content parts."
+    },
+    "name": {
+      "type": "string",
+      "description": "Optional name of the message author."
+    },
+    "tool_call_id": {
+      "type": "string",
+      "description": "When role is tool, references the tool call this message responds to."
+    },
+    "tool_calls": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "type": "string", "enum": ["function"] },
+          "function": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "arguments": { "type": "string" }
+            },
+            "required": ["name", "arguments"]
+          }
+        },
+        "required": ["id", "type", "function"]
+      }
+    }
+  }
+}

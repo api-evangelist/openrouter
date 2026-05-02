@@ -9,15 +9,21 @@ apis:
       - Gateway
       - Large Language Models
       - Router
-    humanURL: ' https://openrouter.ai/'
+    humanURL: https://openrouter.ai/
     baseURL: https://openrouter.ai/api/v1
     properties:
-      - url: ' https://openrouter.ai/'
+      - url: https://openrouter.ai/
         type: Documentation
       - url: https://openrouter.ai/docs/api/reference/overview
         type: Documentation
       - url: https://openrouter.ai/openapi.json
         type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/openapi/openrouter-openapi.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/json-schema/openrouter-chat-message-schema.json
+        type: JSONSchema
+      - url: https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/json-ld/openrouter-context.jsonld
+        type: JSONLDContext
     description: >-
       OpenRouter provides unified access to hundreds of AI models through a
       single API endpoint. It implements the OpenAI API specification for
@@ -268,7 +274,7 @@ common:
     type: Documentation
     description: 'null'
 created: '2025-08-19T00:00:00.000Z'
-modified: '2026-03-16'
+modified: '2026-04-28'
 position: Consuming
 segments:
   - Gateways
