@@ -1,0 +1,61 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: OpenRouter
+providerId: openrouter
+created: '2026-05-04'
+modified: '2026-05-04'
+reconciled: true
+tags:
+  - FinOps
+  - FOCUS
+  - AI Model Aggregation
+description: FOCUS-aligned FinOps for OpenRouter.
+sources:
+  - https://openrouter.ai/pricing
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: OpenRouter
+serviceCategory: AI Model Aggregation
+billingModel:
+  pricingCategory: Pay-As-You-Go (Provider Passthrough + 5.5% Platform Fee)
+  billingFrequency: Monthly
+  billingCurrency: USD
+focusColumns:
+  ServiceName: OpenRouter
+  ServiceCategory: AI Model Aggregation
+  ProviderName: OpenRouter
+  PublisherName: OpenRouter
+  BillingCurrency: USD
+meters:
+  - name: input_tokens
+    unit: token
+    aggregation: sum
+    dimensions:
+      - model
+      - provider
+  - name: output_tokens
+    unit: token
+    aggregation: sum
+    dimensions:
+      - model
+      - provider
+  - name: credits_purchased
+    unit: USD
+    aggregation: sum
+  - name: platform_fees
+    unit: USD
+    aggregation: sum
+principles:
+  - name: Visibility
+    description: Track OpenRouter consumption monthly.
+  - name: Allocation
+    description: Tag usage to teams/cost centers.
+  - name: Optimization
+    description: Right-size; reclaim unused entitlements.
+  - name: Accountability
+    description: Set spend alerts; quarterly review.

@@ -1,0 +1,85 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: OpenRouter
+providerId: openrouter
+created: '2026-05-04'
+modified: '2026-05-04'
+reconciled: true
+tags:
+  - AI
+  - LLM
+  - API Aggregator
+description: OpenRouter offers 0% markup on upstream model pricing + 5.5% platform fee on credits.
+sources:
+  - https://openrouter.ai/pricing
+plans:
+  - id: openrouter-free
+    name: Free
+    type: freemium
+    description: 25+ free models, 50 requests/day cap.
+    entries:
+      - label: Requests/day
+        name: requests
+        type: quota
+        metric: request
+        limit: 50
+        timeFrame: day
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+    elements:
+      - name: 25+ free models
+      - name: Daily request limit
+      - name: Community support
+  - id: openrouter-payg
+    name: Pay As You Go
+    type: usage-based
+    description: 300+ models, no markup on provider rates + 5.5% platform fee on credit purchases.
+    entries:
+      - label: Credit purchase fee
+        name: credit_fee
+        type: metered
+        metric: purchase
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: 5.5%
+        userMultiplied: false
+      - label: Per-model usage (passthrough)
+        name: model_usage
+        type: metered
+        metric: tokens
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: provider rate
+        userMultiplied: false
+    elements:
+      - name: 300+ models from all major providers
+      - name: 0% markup on provider pricing
+      - name: Failed/fallback attempts not billed
+      - name: No rate limits on paid models
+  - id: openrouter-enterprise
+    name: Enterprise
+    type: enterprise
+    description: Volume-based with custom pricing and annual commitments.
+    entries:
+      - label: Annual (custom)
+        name: annual
+        type: subscription
+        metric: year
+        limit: -1
+        timeFrame: year
+        geo: global
+        unit: 1
+        price: custom
+        userMultiplied: false
+    elements:
+      - name: Volume discounts
+      - name: Annual commitments
+      - name: Dedicated support
+      - name: Negotiated platform fee

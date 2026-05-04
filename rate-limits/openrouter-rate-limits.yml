@@ -1,0 +1,32 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: OpenRouter
+providerId: openrouter
+created: '2026-05-04'
+modified: '2026-05-04'
+reconciled: true
+tags:
+  - Rate Limiting
+  - AI
+description: OpenRouter rate limits depend on model and credit balance.
+sources:
+  - https://openrouter.ai/pricing
+  - https://openrouter.ai/docs/limits
+headers: {}
+responseCodes:
+  throttled: 429
+limits:
+  - name: Free models
+    scope: user
+    metric: requests_per_day
+    limit: 50
+    timeFrame: day
+  - name: Paid models
+    scope: user
+    metric: requests_per_minute
+    limit: no hard cap (model-dependent)
+  - name: Per-model upstream limit
+    scope: model
+    metric: varies
+    limit: passes through to upstream provider
