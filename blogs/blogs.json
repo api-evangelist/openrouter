@@ -1,0 +1,13 @@
+{
+  "repo": "openrouter",
+  "feeds": [
+    {
+      "source": "https://openrouter.ai/announcements",
+      "feed_url": "https://openrouter.ai/announcements/feed.xml",
+      "saved": 10,
+      "title": "OpenRouter Announcements"
+    }
+  ],
+  "post_count": 10,
+  "fetched": "2026-05-03T23:32:59Z"
+}
