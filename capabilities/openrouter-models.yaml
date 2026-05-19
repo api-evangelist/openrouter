@@ -1,0 +1,117 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: OpenRouter API — Models
+  description: 'OpenRouter API — Models. 2 operations. Lead operation: List available models. Self-contained Naftiko capability
+    covering one Openrouter business surface.'
+  tags:
+  - Openrouter
+  - Models
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OPENROUTER_API_KEY: OPENROUTER_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openrouter-models
+    baseUri: https://openrouter.ai/api/v1
+    description: OpenRouter API — Models business capability. Self-contained, no shared references.
+    resources:
+    - name: models
+      path: /models
+      operations:
+      - name: listmodels
+        method: GET
+        description: List available models
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: models-author-slug-endpoints
+      path: /models/{author}/{slug}/endpoints
+      operations:
+      - name: listmodelendpoints
+        method: GET
+        description: List endpoints for a model
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: author
+          in: path
+          type: string
+          required: true
+        - name: slug
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.OPENROUTER_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: openrouter-models-rest
+    port: 8080
+    description: REST adapter for OpenRouter API — Models. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/models
+      name: models
+      description: REST surface for models.
+      operations:
+      - method: GET
+        name: listmodels
+        description: List available models
+        call: openrouter-models.listmodels
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/models/{author}/{slug}/endpoints
+      name: models-author-slug-endpoints
+      description: REST surface for models-author-slug-endpoints.
+      operations:
+      - method: GET
+        name: listmodelendpoints
+        description: List endpoints for a model
+        call: openrouter-models.listmodelendpoints
+        with:
+          author: rest.author
+          slug: rest.slug
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openrouter-models-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for OpenRouter API — Models. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: list-available-models
+      description: List available models
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openrouter-models.listmodels
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-endpoints-model
+      description: List endpoints for a model
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openrouter-models.listmodelendpoints
+      with:
+        author: tools.author
+        slug: tools.slug
+      outputParameters:
+      - type: object
+        mapping: $.

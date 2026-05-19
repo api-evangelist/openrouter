@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: OpenRouter API — Credits
+  description: 'OpenRouter API — Credits. 1 operations. Lead operation: Get credit balance. Self-contained Naftiko capability
+    covering one Openrouter business surface.'
+  tags:
+  - Openrouter
+  - Credits
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OPENROUTER_API_KEY: OPENROUTER_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openrouter-credits
+    baseUri: https://openrouter.ai/api/v1
+    description: OpenRouter API — Credits business capability. Self-contained, no shared references.
+    resources:
+    - name: credits
+      path: /credits
+      operations:
+      - name: getcredits
+        method: GET
+        description: Get credit balance
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.OPENROUTER_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: openrouter-credits-rest
+    port: 8080
+    description: REST adapter for OpenRouter API — Credits. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/credits
+      name: credits
+      description: REST surface for credits.
+      operations:
+      - method: GET
+        name: getcredits
+        description: Get credit balance
+        call: openrouter-credits.getcredits
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openrouter-credits-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for OpenRouter API — Credits. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: get-credit-balance
+      description: Get credit balance
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openrouter-credits.getcredits
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: OpenRouter API — Generation
+  description: 'OpenRouter API — Generation. 1 operations. Lead operation: Get generation stats. Self-contained Naftiko capability
+    covering one Openrouter business surface.'
+  tags:
+  - Openrouter
+  - Generation
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OPENROUTER_API_KEY: OPENROUTER_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openrouter-generation
+    baseUri: https://openrouter.ai/api/v1
+    description: OpenRouter API — Generation business capability. Self-contained, no shared references.
+    resources:
+    - name: generation
+      path: /generation
+      operations:
+      - name: getgeneration
+        method: GET
+        description: Get generation stats
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: query
+          type: string
+          description: Generation identifier returned in chat completion responses.
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.OPENROUTER_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: openrouter-generation-rest
+    port: 8080
+    description: REST adapter for OpenRouter API — Generation. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/generation
+      name: generation
+      description: REST surface for generation.
+      operations:
+      - method: GET
+        name: getgeneration
+        description: Get generation stats
+        call: openrouter-generation.getgeneration
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openrouter-generation-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for OpenRouter API — Generation. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: get-generation-stats
+      description: Get generation stats
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openrouter-generation.getgeneration
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
