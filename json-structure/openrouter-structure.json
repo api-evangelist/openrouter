@@ -1,0 +1,158 @@
+{
+  "provider": "OpenRouter",
+  "providerId": "openrouter",
+  "kind": "json-structure",
+  "description": "Structural overview of the OpenRouter API surface; extracted from openapi/.",
+  "schemaCount": 5,
+  "operationCount": 12,
+  "schemas": [
+    {
+      "name": "ChatCompletionRequest",
+      "type": "object",
+      "propertyCount": 12,
+      "required": [
+        "model",
+        "messages"
+      ]
+    },
+    {
+      "name": "ChatMessage",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "role"
+      ]
+    },
+    {
+      "name": "ChatCompletionResponse",
+      "type": "object",
+      "propertyCount": 6,
+      "required": []
+    },
+    {
+      "name": "CompletionRequest",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "model",
+        "prompt"
+      ]
+    },
+    {
+      "name": "ModelList",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    }
+  ],
+  "operations": [
+    {
+      "method": "POST",
+      "path": "/chat/completions",
+      "operationId": "createChatCompletion",
+      "summary": "Create chat completion",
+      "tags": [
+        "Chat"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/completions",
+      "operationId": "createCompletion",
+      "summary": "Create completion",
+      "tags": [
+        "Completions"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/models",
+      "operationId": "listModels",
+      "summary": "List available models",
+      "tags": [
+        "Models"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/models/{author}/{slug}/endpoints",
+      "operationId": "listModelEndpoints",
+      "summary": "List endpoints for a model",
+      "tags": [
+        "Models"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/generation",
+      "operationId": "getGeneration",
+      "summary": "Get generation stats",
+      "tags": [
+        "Generation"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/credits",
+      "operationId": "getCredits",
+      "summary": "Get credit balance",
+      "tags": [
+        "Credits"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/providers",
+      "operationId": "listProviders",
+      "summary": "List providers",
+      "tags": [
+        "Providers"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/keys",
+      "operationId": "listKeys",
+      "summary": "List API keys",
+      "tags": [
+        "Keys"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/keys",
+      "operationId": "createKey",
+      "summary": "Create API key",
+      "tags": [
+        "Keys"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/keys/{hash}",
+      "operationId": "getKey",
+      "summary": "Get API key",
+      "tags": [
+        "Keys"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/keys/{hash}",
+      "operationId": "deleteKey",
+      "summary": "Delete API key",
+      "tags": [
+        "Keys"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/keys/{hash}",
+      "operationId": "updateKey",
+      "summary": "Update API key",
+      "tags": [
+        "Keys"
+      ]
+    }
+  ]
+}

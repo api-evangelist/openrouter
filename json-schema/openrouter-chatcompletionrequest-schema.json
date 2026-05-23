@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ChatCompletionRequest",
+  "title": "ChatCompletionRequest",
+  "type": "object",
+  "required": [
+    "model",
+    "messages"
+  ],
+  "properties": {
+    "model": {
+      "type": "string",
+      "description": "Model slug (e.g., openai/gpt-4o, anthropic/claude-3.5-sonnet)."
+    },
+    "messages": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ChatMessage"
+      }
+    },
+    "stream": {
+      "type": "boolean",
+      "default": false
+    },
+    "max_tokens": {
+      "type": "integer"
+    },
+    "temperature": {
+      "type": "number"
+    },
+    "top_p": {
+      "type": "number"
+    },
+    "tools": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "tool_choice": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "response_format": {
+      "type": "object"
+    },
+    "provider": {
+      "type": "object",
+      "description": "Provider routing preferences."
+    },
+    "plugins": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "user": {
+      "type": "string"
+    }
+  }
+}

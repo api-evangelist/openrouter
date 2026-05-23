@@ -1,0 +1,19 @@
+name: OpenRouter Domain Vocabulary
+provider: OpenRouter
+providerId: openrouter
+description: Tag-derived vocabulary for the OpenRouter API surface; sourced from openapi/ tags.
+terms:
+- term: Chat
+  description: Chat completion endpoints (OpenAI-compatible).
+- term: Completions
+  description: Legacy completions endpoint.
+- term: Models
+  description: Discover available models and their endpoints.
+- term: Generation
+  description: Query stats and usage for completed generations.
+- term: Credits
+  description: Account credit balance and usage.
+- term: Keys
+  description: Provisioning and management of API keys.
+- term: Providers
+  description: List supported providers.
