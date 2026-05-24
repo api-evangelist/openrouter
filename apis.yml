@@ -296,6 +296,8 @@ common:
   sources:
   - https://openrouter.ai/pricing
   updated: '2026-05-04'
+- type: LLMsTxt
+  url: https://openrouter.ai/llms.txt
 created: '2025-08-19T00:00:00.000Z'
 modified: '2026-05-19'
 position: Consuming
