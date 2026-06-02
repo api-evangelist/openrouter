@@ -2,12 +2,20 @@
   "repo": "openrouter",
   "feeds": [
     {
+      "source": "https://openrouter.ai/announcements/feed.xml",
+      "feed_url": "https://openrouter.ai/announcements/feed.xml",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
       "source": "https://openrouter.ai/announcements",
       "feed_url": "https://openrouter.ai/announcements/feed.xml",
-      "title": "OpenRouter Announcements",
-      "saved": 39
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
     }
   ],
-  "post_count": 51,
-  "fetched": "2026-05-17T20:20:35Z"
+  "post_count": 54,
+  "fetched": "2026-06-01T23:35:02Z"
 }
