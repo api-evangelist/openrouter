@@ -1,0 +1,261 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenRouter API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Chat",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create chat completion",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://openrouter.ai/api/v1/chat/completions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Generates a model response for the given chat conversation. Supports text and image inputs, streaming via Server-Sent Events, tool and function calling, structured outputs, and provider routing."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Completions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create completion",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://openrouter.ai/api/v1/completions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Legacy text completion endpoint that takes a prompt and returns a completion."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Models",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List available models",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openrouter.ai/api/v1/models"
+          },
+          "docs": "Returns the full list of models available through OpenRouter."
+        },
+        {
+          "info": {
+            "name": "List endpoints for a model",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openrouter.ai/api/v1/models/:author/:slug/endpoints",
+            "params": [
+              {
+                "name": "author",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns all provider endpoints serving the specified model with per-endpoint pricing, context length, and capabilities."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Generation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get generation stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openrouter.ai/api/v1/generation",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "Generation identifier returned in chat completion responses."
+              }
+            ]
+          },
+          "docs": "Retrieves usage statistics for a completed generation including token counts, cost, cached tokens, and reasoning tokens."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Credits",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get credit balance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openrouter.ai/api/v1/credits"
+          },
+          "docs": "Returns the current credit balance and usage for the account."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Providers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List providers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openrouter.ai/api/v1/providers"
+          },
+          "docs": "Returns the list of supported model providers."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Keys",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List API keys",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openrouter.ai/api/v1/keys"
+          },
+          "docs": "Lists all API keys provisioned under the calling provisioning key."
+        },
+        {
+          "info": {
+            "name": "Create API key",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://openrouter.ai/api/v1/keys",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new API key, optionally with a credit limit."
+        },
+        {
+          "info": {
+            "name": "Get API key",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openrouter.ai/api/v1/keys/:hash",
+            "params": [
+              {
+                "name": "hash",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get API key"
+        },
+        {
+          "info": {
+            "name": "Update API key",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://openrouter.ai/api/v1/keys/:hash",
+            "params": [
+              {
+                "name": "hash",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update API key"
+        },
+        {
+          "info": {
+            "name": "Delete API key",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://openrouter.ai/api/v1/keys/:hash",
+            "params": [
+              {
+                "name": "hash",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete API key"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

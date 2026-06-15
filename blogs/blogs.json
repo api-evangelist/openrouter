@@ -3,19 +3,13 @@
   "feeds": [
     {
       "source": "https://openrouter.ai/announcements/feed.xml",
-      "feed_url": "https://openrouter.ai/announcements/feed.xml",
-      "title": "",
-      "saved": 0,
-      "method": "feed"
+      "error": "HTTPError"
     },
     {
       "source": "https://openrouter.ai/announcements",
-      "feed_url": "https://openrouter.ai/announcements/feed.xml",
-      "title": "",
-      "saved": 0,
-      "method": "discovered"
+      "error": "HTTPError"
     }
   ],
-  "post_count": 54,
-  "fetched": "2026-06-01T23:35:02Z"
+  "post_count": 56,
+  "fetched": "2026-06-14T20:42:17Z"
 }
