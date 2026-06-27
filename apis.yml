@@ -165,7 +165,7 @@ common:
     description: 'null'
   - url: https://openrouter.ai/docs/api/reference/errors-and-debugging
     name: Errors and Debugging
-    type: Errors
+    type: ErrorCodes
     description: 'null'
   - url: https://openrouter.ai/docs/api/reference/streaming
     name: Streaming
@@ -288,7 +288,7 @@ common:
     sources:
       - https://openrouter.ai/pricing
     updated: '2026-05-04'
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://openrouter.ai/llms.txt
 created: '2025-08-19T00:00:00.000Z'
 modified: '2026-05-19'

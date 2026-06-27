@@ -2,14 +2,13 @@
   "repo": "openrouter",
   "feeds": [
     {
-      "source": "https://openrouter.ai/announcements/feed.xml",
-      "error": "HTTPError"
-    },
-    {
       "source": "https://openrouter.ai/announcements",
-      "error": "HTTPError"
+      "feed_url": "https://openrouter.ai/blog/feed.xml",
+      "title": "",
+      "saved": 5,
+      "method": "discovered"
     }
   ],
-  "post_count": 56,
-  "fetched": "2026-06-14T20:42:17Z"
+  "fetched": "2026-06-27T12:03:07Z",
+  "post_count": 71
 }
