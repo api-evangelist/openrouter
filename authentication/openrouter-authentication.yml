@@ -1,0 +1,13 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/openrouter-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: BearerAuth
+  type: http
+  scheme: bearer
+  bearerFormat: OPENROUTER_API_KEY
+  sources:
+  - openapi/openrouter-openapi.yml
