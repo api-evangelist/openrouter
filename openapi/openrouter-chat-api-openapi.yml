@@ -1,0 +1,154 @@
+openapi: 3.1.0
+info:
+  title: OpenRouter Chat API
+  description: OpenRouter provides unified access to hundreds of AI models through a single API endpoint. It implements the OpenAI API specification for chat completions, allowing developers to use any model with the same request and response format. The API also exposes model discovery, generation statistics, credits and balance information, and provisioning endpoints for programmatic key management.
+  version: '1.0'
+  contact:
+    name: OpenRouter
+    url: https://openrouter.ai/
+  license:
+    name: Proprietary
+    url: https://openrouter.ai/terms
+servers:
+- url: https://openrouter.ai/api/v1
+  description: OpenRouter production API
+security:
+- BearerAuth: []
+tags:
+- name: Chat
+  description: Chat completion endpoints (OpenAI-compatible).
+paths:
+  /chat/completions:
+    post:
+      operationId: createChatCompletion
+      summary: Create chat completion
+      description: Generates a model response for the given chat conversation. Supports text and image inputs, streaming via Server-Sent Events, tool and function calling, structured outputs, and provider routing.
+      tags:
+      - Chat
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatCompletionRequest'
+      responses:
+        '200':
+          description: Chat completion response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatCompletionResponse'
+            text/event-stream:
+              schema:
+                type: string
+                description: Server-Sent Events stream of partial completions.
+components:
+  schemas:
+    ChatMessage:
+      type: object
+      required:
+      - role
+      properties:
+        role:
+          type: string
+          enum:
+          - system
+          - user
+          - assistant
+          - tool
+        content:
+          oneOf:
+          - type: string
+          - type: array
+            items:
+              type: object
+        name:
+          type: string
+        tool_call_id:
+          type: string
+    ChatCompletionResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        object:
+          type: string
+        created:
+          type: integer
+        model:
+          type: string
+        choices:
+          type: array
+          items:
+            type: object
+            properties:
+              index:
+                type: integer
+              message:
+                $ref: '#/components/schemas/ChatMessage'
+              finish_reason:
+                type: string
+                enum:
+                - stop
+                - length
+                - tool_calls
+                - content_filter
+                - error
+        usage:
+          type: object
+          properties:
+            prompt_tokens:
+              type: integer
+            completion_tokens:
+              type: integer
+            total_tokens:
+              type: integer
+    ChatCompletionRequest:
+      type: object
+      required:
+      - model
+      - messages
+      properties:
+        model:
+          type: string
+          description: Model slug (e.g., openai/gpt-4o, anthropic/claude-3.5-sonnet).
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChatMessage'
+        stream:
+          type: boolean
+          default: false
+        max_tokens:
+          type: integer
+        temperature:
+          type: number
+        top_p:
+          type: number
+        tools:
+          type: array
+          items:
+            type: object
+        tool_choice:
+          oneOf:
+          - type: string
+          - type: object
+        response_format:
+          type: object
+        provider:
+          type: object
+          description: Provider routing preferences.
+        plugins:
+          type: array
+          items:
+            type: object
+        user:
+          type: string
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: OPENROUTER_API_KEY
+externalDocs:
+  description: OpenRouter API Reference
+  url: https://openrouter.ai/docs/api/reference/overview

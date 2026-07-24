@@ -1,0 +1,108 @@
+openapi: 3.1.0
+info:
+  title: OpenRouter Chat Keys API
+  description: OpenRouter provides unified access to hundreds of AI models through a single API endpoint. It implements the OpenAI API specification for chat completions, allowing developers to use any model with the same request and response format. The API also exposes model discovery, generation statistics, credits and balance information, and provisioning endpoints for programmatic key management.
+  version: '1.0'
+  contact:
+    name: OpenRouter
+    url: https://openrouter.ai/
+  license:
+    name: Proprietary
+    url: https://openrouter.ai/terms
+servers:
+- url: https://openrouter.ai/api/v1
+  description: OpenRouter production API
+security:
+- BearerAuth: []
+tags:
+- name: Keys
+  description: Provisioning and management of API keys.
+paths:
+  /keys:
+    get:
+      operationId: listKeys
+      summary: List API keys
+      description: Lists all API keys provisioned under the calling provisioning key.
+      tags:
+      - Keys
+      responses:
+        '200':
+          description: List of keys.
+    post:
+      operationId: createKey
+      summary: Create API key
+      description: Creates a new API key, optionally with a credit limit.
+      tags:
+      - Keys
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                limit:
+                  type: number
+      responses:
+        '200':
+          description: New API key.
+  /keys/{hash}:
+    get:
+      operationId: getKey
+      summary: Get API key
+      tags:
+      - Keys
+      parameters:
+      - name: hash
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: API key details.
+    delete:
+      operationId: deleteKey
+      summary: Delete API key
+      tags:
+      - Keys
+      parameters:
+      - name: hash
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Key deleted.
+    patch:
+      operationId: updateKey
+      summary: Update API key
+      tags:
+      - Keys
+      parameters:
+      - name: hash
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Updated API key.
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: OPENROUTER_API_KEY
+externalDocs:
+  description: OpenRouter API Reference
+  url: https://openrouter.ai/docs/api/reference/overview

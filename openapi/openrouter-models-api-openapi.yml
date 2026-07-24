@@ -1,0 +1,96 @@
+openapi: 3.1.0
+info:
+  title: OpenRouter Chat Models API
+  description: OpenRouter provides unified access to hundreds of AI models through a single API endpoint. It implements the OpenAI API specification for chat completions, allowing developers to use any model with the same request and response format. The API also exposes model discovery, generation statistics, credits and balance information, and provisioning endpoints for programmatic key management.
+  version: '1.0'
+  contact:
+    name: OpenRouter
+    url: https://openrouter.ai/
+  license:
+    name: Proprietary
+    url: https://openrouter.ai/terms
+servers:
+- url: https://openrouter.ai/api/v1
+  description: OpenRouter production API
+security:
+- BearerAuth: []
+tags:
+- name: Models
+  description: Discover available models and their endpoints.
+paths:
+  /models:
+    get:
+      operationId: listModels
+      summary: List available models
+      description: Returns the full list of models available through OpenRouter.
+      tags:
+      - Models
+      responses:
+        '200':
+          description: List of models with metadata, pricing, and capabilities.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelList'
+  /models/{author}/{slug}/endpoints:
+    get:
+      operationId: listModelEndpoints
+      summary: List endpoints for a model
+      description: Returns all provider endpoints serving the specified model with per-endpoint pricing, context length, and capabilities.
+      tags:
+      - Models
+      parameters:
+      - name: author
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: List of endpoints for the model.
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  schemas:
+    ModelList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              name:
+                type: string
+              description:
+                type: string
+              context_length:
+                type: integer
+              pricing:
+                type: object
+                properties:
+                  prompt:
+                    type: string
+                  completion:
+                    type: string
+              top_provider:
+                type: object
+              architecture:
+                type: object
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: OPENROUTER_API_KEY
+externalDocs:
+  description: OpenRouter API Reference
+  url: https://openrouter.ai/docs/api/reference/overview

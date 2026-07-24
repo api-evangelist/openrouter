@@ -1,0 +1,43 @@
+openapi: 3.1.0
+info:
+  title: OpenRouter Chat Credits API
+  description: OpenRouter provides unified access to hundreds of AI models through a single API endpoint. It implements the OpenAI API specification for chat completions, allowing developers to use any model with the same request and response format. The API also exposes model discovery, generation statistics, credits and balance information, and provisioning endpoints for programmatic key management.
+  version: '1.0'
+  contact:
+    name: OpenRouter
+    url: https://openrouter.ai/
+  license:
+    name: Proprietary
+    url: https://openrouter.ai/terms
+servers:
+- url: https://openrouter.ai/api/v1
+  description: OpenRouter production API
+security:
+- BearerAuth: []
+tags:
+- name: Credits
+  description: Account credit balance and usage.
+paths:
+  /credits:
+    get:
+      operationId: getCredits
+      summary: Get credit balance
+      description: Returns the current credit balance and usage for the account.
+      tags:
+      - Credits
+      responses:
+        '200':
+          description: Credit balance.
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: OPENROUTER_API_KEY
+externalDocs:
+  description: OpenRouter API Reference
+  url: https://openrouter.ai/docs/api/reference/overview

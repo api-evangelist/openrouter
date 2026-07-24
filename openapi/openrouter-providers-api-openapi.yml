@@ -1,0 +1,43 @@
+openapi: 3.1.0
+info:
+  title: OpenRouter Chat Providers API
+  description: OpenRouter provides unified access to hundreds of AI models through a single API endpoint. It implements the OpenAI API specification for chat completions, allowing developers to use any model with the same request and response format. The API also exposes model discovery, generation statistics, credits and balance information, and provisioning endpoints for programmatic key management.
+  version: '1.0'
+  contact:
+    name: OpenRouter
+    url: https://openrouter.ai/
+  license:
+    name: Proprietary
+    url: https://openrouter.ai/terms
+servers:
+- url: https://openrouter.ai/api/v1
+  description: OpenRouter production API
+security:
+- BearerAuth: []
+tags:
+- name: Providers
+  description: List supported providers.
+paths:
+  /providers:
+    get:
+      operationId: listProviders
+      summary: List providers
+      description: Returns the list of supported model providers.
+      tags:
+      - Providers
+      responses:
+        '200':
+          description: List of providers.
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: OPENROUTER_API_KEY
+externalDocs:
+  description: OpenRouter API Reference
+  url: https://openrouter.ai/docs/api/reference/overview

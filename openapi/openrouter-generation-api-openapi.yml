@@ -1,0 +1,50 @@
+openapi: 3.1.0
+info:
+  title: OpenRouter Chat Generation API
+  description: OpenRouter provides unified access to hundreds of AI models through a single API endpoint. It implements the OpenAI API specification for chat completions, allowing developers to use any model with the same request and response format. The API also exposes model discovery, generation statistics, credits and balance information, and provisioning endpoints for programmatic key management.
+  version: '1.0'
+  contact:
+    name: OpenRouter
+    url: https://openrouter.ai/
+  license:
+    name: Proprietary
+    url: https://openrouter.ai/terms
+servers:
+- url: https://openrouter.ai/api/v1
+  description: OpenRouter production API
+security:
+- BearerAuth: []
+tags:
+- name: Generation
+  description: Query stats and usage for completed generations.
+paths:
+  /generation:
+    get:
+      operationId: getGeneration
+      summary: Get generation stats
+      description: Retrieves usage statistics for a completed generation including token counts, cost, cached tokens, and reasoning tokens.
+      tags:
+      - Generation
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: string
+        description: Generation identifier returned in chat completion responses.
+      responses:
+        '200':
+          description: Generation statistics.
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: OPENROUTER_API_KEY
+externalDocs:
+  description: OpenRouter API Reference
+  url: https://openrouter.ai/docs/api/reference/overview
