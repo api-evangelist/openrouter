@@ -1,108 +1,230 @@
 aid: openrouter
 url: https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/apis.yml
 apis:
-  - aid: openrouter:openrouter
-    name: OpenRouter
-    tags:
-      - Artificial Intelligence
-      - Gateway
-      - Large Language Models
-      - Router
-    humanURL: https://openrouter.ai/
-    baseURL: https://openrouter.ai/api/v1
-    properties:
-      - url: https://openrouter.ai/
-        type: Documentation
-      - url: https://openrouter.ai/docs/api/reference/overview
-        type: Documentation
-      - url: https://openrouter.ai/openapi.json
-        type: OpenAPI
-      - url: https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/openapi/openrouter-openapi.yml
-        type: OpenAPI
-      - url: >-
-          https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/json-schema/openrouter-chat-message-schema.json
-        type: JSONSchema
-      - url: https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/json-ld/openrouter-context.jsonld
-        type: JSONLDContext
-    description: >-
-      OpenRouter provides unified access to hundreds of AI models through a single API endpoint. It implements the
-      OpenAI API specification for chat completions, allowing developers to use any model with the same request and
-      response format. Better prices, better uptime, no subscription.
-  - aid: openrouter:chat-completions-api
-    name: OpenRouter Chat Completions API
-    tags:
-      - Chat
-      - Completions
-      - Large Language Models
-    humanURL: https://openrouter.ai/docs/api/reference/overview
-    baseURL: https://openrouter.ai/api/v1
-    properties:
-      - url: https://openrouter.ai/docs/api/reference/overview
-        type: Documentation
-      - url: https://openrouter.ai/docs/api/reference/parameters
-        type: Documentation
-      - url: https://openrouter.ai/docs/api/reference/streaming
-        type: Documentation
-      - url: https://openrouter.ai/openapi.json
-        type: OpenAPI
-    description: >-
-      The Chat Completions API is the primary endpoint for generating model responses. It supports text and image
-      inputs, streaming via Server-Sent Events, tool and function calling, structured outputs, and provider routing
-      across 400+ AI models from 60+ providers through a single standardized interface at /api/v1/chat/completions.
-  - aid: openrouter:models-api
-    name: OpenRouter Models API
-    tags:
-      - Discovery
-      - Models
-    humanURL: https://openrouter.ai/docs/api/api-reference/models/get-models
-    baseURL: https://openrouter.ai/api/v1
-    properties:
-      - url: https://openrouter.ai/docs/api/api-reference/models/get-models
-        type: Documentation
-      - url: https://openrouter.ai/docs/guides/overview/models
-        type: Documentation
-      - url: https://openrouter.ai/openapi.json
-        type: OpenAPI
-    description: >-
-      The Models API allows developers to list and discover all available AI models and their properties, including
-      pricing, context lengths, supported features, and provider information. Endpoints include listing all models and
-      listing all endpoints for a specific model.
-  - aid: openrouter:generation-api
-    name: OpenRouter Generation API
-    tags:
-      - Generation
-      - Stats
-      - Usage
-    humanURL: https://openrouter.ai/docs/api/reference/overview
-    baseURL: https://openrouter.ai/api/v1
-    properties:
-      - url: https://openrouter.ai/docs/api/reference/overview
-        type: Documentation
-      - url: https://openrouter.ai/openapi.json
-        type: OpenAPI
-    description: >-
-      The Generation API allows querying for generation statistics and historical usage data, including token counts,
-      cost calculations, cached token tracking, and reasoning token counts for completed requests via the
-      /api/v1/generation endpoint.
-  - aid: openrouter:keys-api
-    name: OpenRouter Keys Management API
-    tags:
-      - API Keys
-      - Management
-      - Provisioning
-    humanURL: https://openrouter.ai/docs/guides/overview/auth/provisioning-api-keys
-    baseURL: https://openrouter.ai/api/v1
-    properties:
-      - url: https://openrouter.ai/docs/guides/overview/auth/provisioning-api-keys
-        type: Documentation
-      - url: https://openrouter.ai/docs/guides/overview/auth/management-api-keys
-        type: Documentation
-      - url: https://openrouter.ai/openapi.json
-        type: OpenAPI
-    description: >-
-      The Keys Management API enables programmatic creation, rotation, and management of OpenRouter API keys. Common use
-      cases include SaaS applications that automatically create unique keys for each customer, key rotation for security
-      compliance, and usage monitoring with automatic key disabling when limits are exceeded.
+- aid: openrouter:openrouter-chat-api
+  name: OpenRouter Chat API
+  description: Chat completion endpoints (OpenAI-compatible).
+  humanURL: https://openrouter.ai/
+  baseURL: https://openrouter.ai/api/v1
+  tags:
+  - Chat
+  properties:
+  - type: OpenAPI
+    url: openapi/openrouter-chat-api-openapi.yml
+  - type: Documentation
+    url: https://openrouter.ai/
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/reference/overview
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/json-schema/openrouter-chat-message-schema.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/json-ld/openrouter-context.jsonld
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/reference/parameters
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/reference/streaming
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/api-reference/models/get-models
+  - type: Documentation
+    url: https://openrouter.ai/docs/guides/overview/models
+  - type: Documentation
+    url: https://openrouter.ai/docs/guides/overview/auth/provisioning-api-keys
+  - type: Documentation
+    url: https://openrouter.ai/docs/guides/overview/auth/management-api-keys
+- aid: openrouter:openrouter-completions-api
+  name: OpenRouter Completions API
+  description: Legacy completions endpoint.
+  humanURL: https://openrouter.ai/
+  baseURL: https://openrouter.ai/api/v1
+  tags:
+  - Completions
+  properties:
+  - type: OpenAPI
+    url: openapi/openrouter-completions-api-openapi.yml
+  - type: Documentation
+    url: https://openrouter.ai/
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/reference/overview
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/json-schema/openrouter-chat-message-schema.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/json-ld/openrouter-context.jsonld
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/reference/parameters
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/reference/streaming
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/api-reference/models/get-models
+  - type: Documentation
+    url: https://openrouter.ai/docs/guides/overview/models
+  - type: Documentation
+    url: https://openrouter.ai/docs/guides/overview/auth/provisioning-api-keys
+  - type: Documentation
+    url: https://openrouter.ai/docs/guides/overview/auth/management-api-keys
+- aid: openrouter:openrouter-credits-api
+  name: OpenRouter Credits API
+  description: Account credit balance and usage.
+  humanURL: https://openrouter.ai/
+  baseURL: https://openrouter.ai/api/v1
+  tags:
+  - Credits
+  properties:
+  - type: OpenAPI
+    url: openapi/openrouter-credits-api-openapi.yml
+  - type: Documentation
+    url: https://openrouter.ai/
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/reference/overview
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/json-schema/openrouter-chat-message-schema.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/json-ld/openrouter-context.jsonld
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/reference/parameters
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/reference/streaming
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/api-reference/models/get-models
+  - type: Documentation
+    url: https://openrouter.ai/docs/guides/overview/models
+  - type: Documentation
+    url: https://openrouter.ai/docs/guides/overview/auth/provisioning-api-keys
+  - type: Documentation
+    url: https://openrouter.ai/docs/guides/overview/auth/management-api-keys
+- aid: openrouter:openrouter-generation-api
+  name: OpenRouter Generation API
+  description: Query stats and usage for completed generations.
+  humanURL: https://openrouter.ai/
+  baseURL: https://openrouter.ai/api/v1
+  tags:
+  - Generation
+  properties:
+  - type: OpenAPI
+    url: openapi/openrouter-generation-api-openapi.yml
+  - type: Documentation
+    url: https://openrouter.ai/
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/reference/overview
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/json-schema/openrouter-chat-message-schema.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/json-ld/openrouter-context.jsonld
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/reference/parameters
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/reference/streaming
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/api-reference/models/get-models
+  - type: Documentation
+    url: https://openrouter.ai/docs/guides/overview/models
+  - type: Documentation
+    url: https://openrouter.ai/docs/guides/overview/auth/provisioning-api-keys
+  - type: Documentation
+    url: https://openrouter.ai/docs/guides/overview/auth/management-api-keys
+- aid: openrouter:openrouter-keys-api
+  name: OpenRouter Keys API
+  description: Provisioning and management of API keys.
+  humanURL: https://openrouter.ai/
+  baseURL: https://openrouter.ai/api/v1
+  tags:
+  - Keys
+  properties:
+  - type: OpenAPI
+    url: openapi/openrouter-keys-api-openapi.yml
+  - type: Documentation
+    url: https://openrouter.ai/
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/reference/overview
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/json-schema/openrouter-chat-message-schema.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/json-ld/openrouter-context.jsonld
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/reference/parameters
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/reference/streaming
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/api-reference/models/get-models
+  - type: Documentation
+    url: https://openrouter.ai/docs/guides/overview/models
+  - type: Documentation
+    url: https://openrouter.ai/docs/guides/overview/auth/provisioning-api-keys
+  - type: Documentation
+    url: https://openrouter.ai/docs/guides/overview/auth/management-api-keys
+- aid: openrouter:openrouter-models-api
+  name: OpenRouter Models API
+  description: Discover available models and their endpoints.
+  humanURL: https://openrouter.ai/
+  baseURL: https://openrouter.ai/api/v1
+  tags:
+  - Models
+  properties:
+  - type: OpenAPI
+    url: openapi/openrouter-models-api-openapi.yml
+  - type: Documentation
+    url: https://openrouter.ai/
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/reference/overview
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/json-schema/openrouter-chat-message-schema.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/json-ld/openrouter-context.jsonld
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/reference/parameters
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/reference/streaming
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/api-reference/models/get-models
+  - type: Documentation
+    url: https://openrouter.ai/docs/guides/overview/models
+  - type: Documentation
+    url: https://openrouter.ai/docs/guides/overview/auth/provisioning-api-keys
+  - type: Documentation
+    url: https://openrouter.ai/docs/guides/overview/auth/management-api-keys
+- aid: openrouter:openrouter-providers-api
+  name: OpenRouter Providers API
+  description: List supported providers.
+  humanURL: https://openrouter.ai/
+  baseURL: https://openrouter.ai/api/v1
+  tags:
+  - Providers
+  properties:
+  - type: OpenAPI
+    url: openapi/openrouter-providers-api-openapi.yml
+  - type: Documentation
+    url: https://openrouter.ai/
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/reference/overview
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/json-schema/openrouter-chat-message-schema.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/json-ld/openrouter-context.jsonld
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/reference/parameters
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/reference/streaming
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/api-reference/models/get-models
+  - type: Documentation
+    url: https://openrouter.ai/docs/guides/overview/models
+  - type: Documentation
+    url: https://openrouter.ai/docs/guides/overview/auth/provisioning-api-keys
+  - type: Documentation
+    url: https://openrouter.ai/docs/guides/overview/auth/management-api-keys
 name: OpenRouter
 tags:
   - Artificial Intelligence
@@ -110,9 +232,24 @@ tags:
   - Large Language Models
   - Router
 kind: contract
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/openrouter.png
 access: 3rd-Party
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/openrouter/overview
   - type: AgenticAccess
     url: agentic-access/openrouter-agentic-access.yml
   - type: TrustCenter
