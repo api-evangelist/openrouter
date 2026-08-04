@@ -1,0 +1,26 @@
+{
+  "provider": "openrouter",
+  "sources": [
+    "openrouter-chat-api-openapi.yml",
+    "openrouter-completions-api-openapi.yml",
+    "openrouter-credits-api-openapi.yml",
+    "openrouter-generation-api-openapi.yml",
+    "openrouter-keys-api-openapi.yml",
+    "openrouter-models-api-openapi.yml",
+    "openrouter-providers-api-openapi.yml"
+  ],
+  "outputs": [
+    "openrouter-chat-api-openapi.yml",
+    "openrouter-completions-api-openapi.yml",
+    "openrouter-credits-api-openapi.yml",
+    "openrouter-generation-api-openapi.yml",
+    "openrouter-keys-api-openapi.yml",
+    "openrouter-models-api-openapi.yml",
+    "openrouter-providers-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

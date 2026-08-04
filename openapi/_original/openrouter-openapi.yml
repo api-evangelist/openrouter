@@ -1,0 +1,402 @@
+openapi: 3.1.0
+info:
+  title: OpenRouter API
+  description: >-
+    OpenRouter provides unified access to hundreds of AI models through a
+    single API endpoint. It implements the OpenAI API specification for chat
+    completions, allowing developers to use any model with the same request
+    and response format. The API also exposes model discovery, generation
+    statistics, credits and balance information, and provisioning endpoints
+    for programmatic key management.
+  version: '1.0'
+  contact:
+    name: OpenRouter
+    url: https://openrouter.ai/
+  license:
+    name: Proprietary
+    url: https://openrouter.ai/terms
+externalDocs:
+  description: OpenRouter API Reference
+  url: https://openrouter.ai/docs/api/reference/overview
+servers:
+  - url: https://openrouter.ai/api/v1
+    description: OpenRouter production API
+security:
+  - BearerAuth: []
+tags:
+  - name: Chat
+    description: Chat completion endpoints (OpenAI-compatible).
+  - name: Completions
+    description: Legacy completions endpoint.
+  - name: Models
+    description: Discover available models and their endpoints.
+  - name: Generation
+    description: Query stats and usage for completed generations.
+  - name: Credits
+    description: Account credit balance and usage.
+  - name: Keys
+    description: Provisioning and management of API keys.
+  - name: Providers
+    description: List supported providers.
+paths:
+  /chat/completions:
+    post:
+      operationId: createChatCompletion
+      summary: Create chat completion
+      description: >-
+        Generates a model response for the given chat conversation. Supports
+        text and image inputs, streaming via Server-Sent Events, tool and
+        function calling, structured outputs, and provider routing.
+      tags:
+        - Chat
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatCompletionRequest'
+      responses:
+        '200':
+          description: Chat completion response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatCompletionResponse'
+            text/event-stream:
+              schema:
+                type: string
+                description: Server-Sent Events stream of partial completions.
+  /completions:
+    post:
+      operationId: createCompletion
+      summary: Create completion
+      description: >-
+        Legacy text completion endpoint that takes a prompt and returns a
+        completion.
+      tags:
+        - Completions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompletionRequest'
+      responses:
+        '200':
+          description: Completion response.
+          content:
+            application/json:
+              schema:
+                type: object
+  /models:
+    get:
+      operationId: listModels
+      summary: List available models
+      description: Returns the full list of models available through OpenRouter.
+      tags:
+        - Models
+      responses:
+        '200':
+          description: List of models with metadata, pricing, and capabilities.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelList'
+  /models/{author}/{slug}/endpoints:
+    get:
+      operationId: listModelEndpoints
+      summary: List endpoints for a model
+      description: >-
+        Returns all provider endpoints serving the specified model with
+        per-endpoint pricing, context length, and capabilities.
+      tags:
+        - Models
+      parameters:
+        - name: author
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of endpoints for the model.
+          content:
+            application/json:
+              schema:
+                type: object
+  /generation:
+    get:
+      operationId: getGeneration
+      summary: Get generation stats
+      description: >-
+        Retrieves usage statistics for a completed generation including token
+        counts, cost, cached tokens, and reasoning tokens.
+      tags:
+        - Generation
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: Generation identifier returned in chat completion responses.
+      responses:
+        '200':
+          description: Generation statistics.
+          content:
+            application/json:
+              schema:
+                type: object
+  /credits:
+    get:
+      operationId: getCredits
+      summary: Get credit balance
+      description: Returns the current credit balance and usage for the account.
+      tags:
+        - Credits
+      responses:
+        '200':
+          description: Credit balance.
+          content:
+            application/json:
+              schema:
+                type: object
+  /providers:
+    get:
+      operationId: listProviders
+      summary: List providers
+      description: Returns the list of supported model providers.
+      tags:
+        - Providers
+      responses:
+        '200':
+          description: List of providers.
+          content:
+            application/json:
+              schema:
+                type: object
+  /keys:
+    get:
+      operationId: listKeys
+      summary: List API keys
+      description: Lists all API keys provisioned under the calling provisioning key.
+      tags:
+        - Keys
+      responses:
+        '200':
+          description: List of keys.
+    post:
+      operationId: createKey
+      summary: Create API key
+      description: Creates a new API key, optionally with a credit limit.
+      tags:
+        - Keys
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                limit:
+                  type: number
+      responses:
+        '200':
+          description: New API key.
+  /keys/{hash}:
+    get:
+      operationId: getKey
+      summary: Get API key
+      tags:
+        - Keys
+      parameters:
+        - name: hash
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: API key details.
+    delete:
+      operationId: deleteKey
+      summary: Delete API key
+      tags:
+        - Keys
+      parameters:
+        - name: hash
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Key deleted.
+    patch:
+      operationId: updateKey
+      summary: Update API key
+      tags:
+        - Keys
+      parameters:
+        - name: hash
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Updated API key.
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: OPENROUTER_API_KEY
+  schemas:
+    ChatCompletionRequest:
+      type: object
+      required:
+        - model
+        - messages
+      properties:
+        model:
+          type: string
+          description: Model slug (e.g., openai/gpt-4o, anthropic/claude-3.5-sonnet).
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChatMessage'
+        stream:
+          type: boolean
+          default: false
+        max_tokens:
+          type: integer
+        temperature:
+          type: number
+        top_p:
+          type: number
+        tools:
+          type: array
+          items:
+            type: object
+        tool_choice:
+          oneOf:
+            - type: string
+            - type: object
+        response_format:
+          type: object
+        provider:
+          type: object
+          description: Provider routing preferences.
+        plugins:
+          type: array
+          items:
+            type: object
+        user:
+          type: string
+    ChatMessage:
+      type: object
+      required:
+        - role
+      properties:
+        role:
+          type: string
+          enum: [system, user, assistant, tool]
+        content:
+          oneOf:
+            - type: string
+            - type: array
+              items:
+                type: object
+        name:
+          type: string
+        tool_call_id:
+          type: string
+    ChatCompletionResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        object:
+          type: string
+        created:
+          type: integer
+        model:
+          type: string
+        choices:
+          type: array
+          items:
+            type: object
+            properties:
+              index:
+                type: integer
+              message:
+                $ref: '#/components/schemas/ChatMessage'
+              finish_reason:
+                type: string
+                enum: [stop, length, tool_calls, content_filter, error]
+        usage:
+          type: object
+          properties:
+            prompt_tokens:
+              type: integer
+            completion_tokens:
+              type: integer
+            total_tokens:
+              type: integer
+    CompletionRequest:
+      type: object
+      required:
+        - model
+        - prompt
+      properties:
+        model:
+          type: string
+        prompt:
+          type: string
+        max_tokens:
+          type: integer
+        temperature:
+          type: number
+        stream:
+          type: boolean
+    ModelList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              name:
+                type: string
+              description:
+                type: string
+              context_length:
+                type: integer
+              pricing:
+                type: object
+                properties:
+                  prompt:
+                    type: string
+                  completion:
+                    type: string
+              top_provider:
+                type: object
+              architecture:
+                type: object

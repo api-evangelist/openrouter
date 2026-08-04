@@ -1,0 +1,112 @@
+{
+  "info": {
+    "_postman_id": "cabee905-48a1-407d-8552-f972e26f435e",
+    "name": "OpenRouter Chat Credits API",
+    "description": "OpenRouter provides unified access to hundreds of AI models through a single API endpoint. It implements the OpenAI API specification for chat completions, allowing developers to use any model with the same request and response format. The API also exposes model discovery, generation statistics, credits and balance information, and provisioning endpoints for programmatic key management.\n\nContact Support:\n Name: OpenRouter",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:26:38.000Z",
+    "updatedAt": "2026-07-28T02:26:38.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-cabee905-48a1-407d-8552-f972e26f435e"
+  },
+  "item": [
+    {
+      "name": "credits",
+      "item": [
+        {
+          "name": "Get credit balance",
+          "id": "e368696f-9f88-40b5-93ca-4b87bbefe489",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/credits",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "credits"
+              ]
+            },
+            "description": "Returns the current credit balance and usage for the account."
+          },
+          "response": [
+            {
+              "id": "ddd0bd19-b738-4f5a-9686-65dbabdd58d7",
+              "name": "Credit balance.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/credits",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "credits"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T02:26:39.000Z",
+              "updatedAt": "2026-07-28T02:26:39.000Z",
+              "uid": "35240-ddd0bd19-b738-4f5a-9686-65dbabdd58d7"
+            }
+          ],
+          "createdAt": "2026-07-28T02:26:39.000Z",
+          "updatedAt": "2026-07-28T02:26:39.000Z",
+          "uid": "35240-e368696f-9f88-40b5-93ca-4b87bbefe489"
+        }
+      ],
+      "id": "72fd12de-6303-4d7f-86b0-cbaa9cec1de3",
+      "createdAt": "2026-07-28T02:26:39.000Z",
+      "updatedAt": "2026-07-28T02:26:39.000Z",
+      "uid": "35240-72fd12de-6303-4d7f-86b0-cbaa9cec1de3"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://openrouter.ai/api/v1"
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "info": {
+    "_postman_id": "8ba778dd-32a5-420c-ad6b-2992e8bab80e",
+    "name": "OpenRouter Chat Completions API",
+    "description": "OpenRouter provides unified access to hundreds of AI models through a single API endpoint. It implements the OpenAI API specification for chat completions, allowing developers to use any model with the same request and response format. The API also exposes model discovery, generation statistics, credits and balance information, and provisioning endpoints for programmatic key management.\n\nContact Support:\n Name: OpenRouter",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:26:37.000Z",
+    "updatedAt": "2026-07-28T02:26:38.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-8ba778dd-32a5-420c-ad6b-2992e8bab80e"
+  },
+  "item": [
+    {
+      "name": "completions",
+      "item": [
+        {
+          "name": "Create completion",
+          "id": "da111eef-f14a-43a5-a3bf-28482d9b4ca6",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"<string>\",\n  \"prompt\": \"<string>\",\n  \"max_tokens\": \"<integer>\",\n  \"temperature\": \"<number>\",\n  \"stream\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/completions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "completions"
+              ]
+            },
+            "description": "Legacy text completion endpoint that takes a prompt and returns a completion."
+          },
+          "response": [
+            {
+              "id": "d96d11cb-1e58-4db0-b97d-ae9e28e7c648",
+              "name": "Completion response.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"prompt\": \"<string>\",\n  \"max_tokens\": \"<integer>\",\n  \"temperature\": \"<number>\",\n  \"stream\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/completions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "completions"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T02:26:38.000Z",
+              "updatedAt": "2026-07-28T02:26:38.000Z",
+              "uid": "35240-d96d11cb-1e58-4db0-b97d-ae9e28e7c648"
+            }
+          ],
+          "createdAt": "2026-07-28T02:26:38.000Z",
+          "updatedAt": "2026-07-28T02:26:38.000Z",
+          "uid": "35240-da111eef-f14a-43a5-a3bf-28482d9b4ca6"
+        }
+      ],
+      "id": "c53398b7-531b-4f23-9925-9f2672a63039",
+      "createdAt": "2026-07-28T02:26:38.000Z",
+      "updatedAt": "2026-07-28T02:26:38.000Z",
+      "uid": "35240-c53398b7-531b-4f23-9925-9f2672a63039"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://openrouter.ai/api/v1"
+    }
+  ]
+}

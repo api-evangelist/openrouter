@@ -1,0 +1,240 @@
+{
+  "info": {
+    "_postman_id": "80a2e3bb-eb71-4fde-9a05-41611bb5b6ad",
+    "name": "OpenRouter Chat Models API",
+    "description": "OpenRouter provides unified access to hundreds of AI models through a single API endpoint. It implements the OpenAI API specification for chat completions, allowing developers to use any model with the same request and response format. The API also exposes model discovery, generation statistics, credits and balance information, and provisioning endpoints for programmatic key management.\n\nContact Support:\n Name: OpenRouter",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:26:44.000Z",
+    "updatedAt": "2026-07-28T02:26:44.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-80a2e3bb-eb71-4fde-9a05-41611bb5b6ad"
+  },
+  "item": [
+    {
+      "name": "models",
+      "item": [
+        {
+          "name": "{author}",
+          "item": [
+            {
+              "name": "{slug}",
+              "item": [
+                {
+                  "name": "endpoints",
+                  "item": [
+                    {
+                      "name": "List endpoints for a model",
+                      "id": "ff5cd2bd-bedc-4b25-8c50-ba4ab31efd4b",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/models/:author/:slug/endpoints",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "models",
+                            ":author",
+                            ":slug",
+                            "endpoints"
+                          ],
+                          "variable": [
+                            {
+                              "id": "d4a784fa-93d9-4805-99aa-ba0d89f62c51",
+                              "key": "author",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            },
+                            {
+                              "id": "fb422784-5fb6-45c7-81ca-e83ac0947030",
+                              "key": "slug",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Returns all provider endpoints serving the specified model with per-endpoint pricing, context length, and capabilities."
+                      },
+                      "response": [
+                        {
+                          "id": "382ec1f7-4cf1-4e17-8a7b-3640762de5d1",
+                          "name": "List of endpoints for the model.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/models/:author/:slug/endpoints",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "models",
+                                ":author",
+                                ":slug",
+                                "endpoints"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "author"
+                                },
+                                {
+                                  "key": "slug"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T02:26:44.000Z",
+                          "updatedAt": "2026-07-28T02:26:44.000Z",
+                          "uid": "35240-382ec1f7-4cf1-4e17-8a7b-3640762de5d1"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:26:44.000Z",
+                      "updatedAt": "2026-07-28T02:26:44.000Z",
+                      "uid": "35240-ff5cd2bd-bedc-4b25-8c50-ba4ab31efd4b"
+                    }
+                  ],
+                  "id": "b94cc4af-b8a3-4d7e-8947-accff2d640d9",
+                  "createdAt": "2026-07-28T02:26:44.000Z",
+                  "updatedAt": "2026-07-28T02:26:44.000Z",
+                  "uid": "35240-b94cc4af-b8a3-4d7e-8947-accff2d640d9"
+                }
+              ],
+              "id": "4e590f90-68ff-4099-a130-52cbca4ec077",
+              "createdAt": "2026-07-28T02:26:44.000Z",
+              "updatedAt": "2026-07-28T02:26:44.000Z",
+              "uid": "35240-4e590f90-68ff-4099-a130-52cbca4ec077"
+            }
+          ],
+          "id": "1af6acad-6818-4620-9bc6-547e74af28ea",
+          "createdAt": "2026-07-28T02:26:44.000Z",
+          "updatedAt": "2026-07-28T02:26:44.000Z",
+          "uid": "35240-1af6acad-6818-4620-9bc6-547e74af28ea"
+        },
+        {
+          "name": "List available models",
+          "id": "8a937e06-632c-46a4-bdd8-c4a95e3b136e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/models",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "models"
+              ]
+            },
+            "description": "Returns the full list of models available through OpenRouter."
+          },
+          "response": [
+            {
+              "id": "7c732876-04f2-4395-8b42-84bcbc3bfb93",
+              "name": "List of models with metadata, pricing, and capabilities.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/models",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "models"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"context_length\": \"<integer>\",\n      \"pricing\": {\n        \"prompt\": \"<string>\",\n        \"completion\": \"<string>\"\n      },\n      \"top_provider\": {},\n      \"architecture\": {}\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"context_length\": \"<integer>\",\n      \"pricing\": {\n        \"prompt\": \"<string>\",\n        \"completion\": \"<string>\"\n      },\n      \"top_provider\": {},\n      \"architecture\": {}\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T02:26:44.000Z",
+              "updatedAt": "2026-07-28T02:26:44.000Z",
+              "uid": "35240-7c732876-04f2-4395-8b42-84bcbc3bfb93"
+            }
+          ],
+          "createdAt": "2026-07-28T02:26:44.000Z",
+          "updatedAt": "2026-07-28T02:26:44.000Z",
+          "uid": "35240-8a937e06-632c-46a4-bdd8-c4a95e3b136e"
+        }
+      ],
+      "id": "3c6dcf2c-5f99-4efe-bd9a-78875a825430",
+      "createdAt": "2026-07-28T02:26:44.000Z",
+      "updatedAt": "2026-07-28T02:26:44.000Z",
+      "uid": "35240-3c6dcf2c-5f99-4efe-bd9a-78875a825430"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://openrouter.ai/api/v1"
+    }
+  ]
+}

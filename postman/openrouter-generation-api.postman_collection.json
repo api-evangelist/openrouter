@@ -1,0 +1,126 @@
+{
+  "info": {
+    "_postman_id": "8e2c538d-3230-453e-ad55-90ac7d7f9298",
+    "name": "OpenRouter Chat Generation API",
+    "description": "OpenRouter provides unified access to hundreds of AI models through a single API endpoint. It implements the OpenAI API specification for chat completions, allowing developers to use any model with the same request and response format. The API also exposes model discovery, generation statistics, credits and balance information, and provisioning endpoints for programmatic key management.\n\nContact Support:\n Name: OpenRouter",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:26:40.000Z",
+    "updatedAt": "2026-07-28T02:26:40.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-8e2c538d-3230-453e-ad55-90ac7d7f9298"
+  },
+  "item": [
+    {
+      "name": "generation",
+      "item": [
+        {
+          "name": "Get generation stats",
+          "id": "554aa193-744d-4ff3-a460-a534251bec1e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/generation?id=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "generation"
+              ],
+              "query": [
+                {
+                  "description": "(Required) Generation identifier returned in chat completion responses.",
+                  "key": "id",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Retrieves usage statistics for a completed generation including token counts, cost, cached tokens, and reasoning tokens."
+          },
+          "response": [
+            {
+              "id": "1a6d45af-be14-4c84-a9de-9d88d2c41e5b",
+              "name": "Generation statistics.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/generation?id=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "generation"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Generation identifier returned in chat completion responses.",
+                      "key": "id",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T02:26:41.000Z",
+              "updatedAt": "2026-07-28T02:26:41.000Z",
+              "uid": "35240-1a6d45af-be14-4c84-a9de-9d88d2c41e5b"
+            }
+          ],
+          "createdAt": "2026-07-28T02:26:41.000Z",
+          "updatedAt": "2026-07-28T02:26:41.000Z",
+          "uid": "35240-554aa193-744d-4ff3-a460-a534251bec1e"
+        }
+      ],
+      "id": "d55740b0-30f6-45c3-8167-fe185c1f2739",
+      "createdAt": "2026-07-28T02:26:41.000Z",
+      "updatedAt": "2026-07-28T02:26:41.000Z",
+      "uid": "35240-d55740b0-30f6-45c3-8167-fe185c1f2739"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://openrouter.ai/api/v1"
+    }
+  ]
+}

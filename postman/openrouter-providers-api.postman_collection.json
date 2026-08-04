@@ -1,0 +1,112 @@
+{
+  "info": {
+    "_postman_id": "b65c4aea-6a94-4ad8-ae7b-873e3e984ba1",
+    "name": "OpenRouter Chat Providers API",
+    "description": "OpenRouter provides unified access to hundreds of AI models through a single API endpoint. It implements the OpenAI API specification for chat completions, allowing developers to use any model with the same request and response format. The API also exposes model discovery, generation statistics, credits and balance information, and provisioning endpoints for programmatic key management.\n\nContact Support:\n Name: OpenRouter",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:26:46.000Z",
+    "updatedAt": "2026-07-28T02:26:46.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b65c4aea-6a94-4ad8-ae7b-873e3e984ba1"
+  },
+  "item": [
+    {
+      "name": "providers",
+      "item": [
+        {
+          "name": "List providers",
+          "id": "d8c52c07-4c9a-4b26-9294-e27917276736",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/providers",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "providers"
+              ]
+            },
+            "description": "Returns the list of supported model providers."
+          },
+          "response": [
+            {
+              "id": "ca59cc6e-8de2-47f8-b576-66e7ffac4bc6",
+              "name": "List of providers.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/providers",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "providers"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T02:26:46.000Z",
+              "updatedAt": "2026-07-28T02:26:46.000Z",
+              "uid": "35240-ca59cc6e-8de2-47f8-b576-66e7ffac4bc6"
+            }
+          ],
+          "createdAt": "2026-07-28T02:26:46.000Z",
+          "updatedAt": "2026-07-28T02:26:46.000Z",
+          "uid": "35240-d8c52c07-4c9a-4b26-9294-e27917276736"
+        }
+      ],
+      "id": "ef63df3e-39cd-4ecf-9c96-d3247f77d127",
+      "createdAt": "2026-07-28T02:26:46.000Z",
+      "updatedAt": "2026-07-28T02:26:46.000Z",
+      "uid": "35240-ef63df3e-39cd-4ecf-9c96-d3247f77d127"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://openrouter.ai/api/v1"
+    }
+  ]
+}
