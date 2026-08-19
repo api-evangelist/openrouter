@@ -1,0 +1,35 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenRouter Chat Credits API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Credits",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get credit balance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openrouter.ai/api/v1/credits"
+          },
+          "docs": "Returns the current credit balance and usage for the account."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

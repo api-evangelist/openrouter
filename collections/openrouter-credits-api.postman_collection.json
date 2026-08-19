@@ -1,0 +1,119 @@
+{
+  "item": [
+    {
+      "id": "6671fe68-436a-4ec6-ac7b-c481bd57a744",
+      "name": "Credits",
+      "description": {
+        "content": "Account credit balance and usage.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "34fbce77-951d-4548-bb45-fd2cad6cd61c",
+          "name": "Get credit balance",
+          "request": {
+            "name": "Get credit balance",
+            "description": {
+              "content": "Returns the current credit balance and usage for the account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "credits"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "11f81f03-db58-4dd6-99d5-0fdcc6b7740b",
+              "name": "Credit balance.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "credits"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://openrouter.ai/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "379fabb0-41ba-444d-b6ff-361e8c97b3fb",
+    "name": "OpenRouter Chat Credits API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenRouter provides unified access to hundreds of AI models through a single API endpoint. It implements the OpenAI API specification for chat completions, allowing developers to use any model with the same request and response format. The API also exposes model discovery, generation statistics, credits and balance information, and provisioning endpoints for programmatic key management.\n\nContact Support:\n Name: OpenRouter",
+      "type": "text/plain"
+    }
+  }
+}

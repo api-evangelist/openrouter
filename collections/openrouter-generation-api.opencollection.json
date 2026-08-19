@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenRouter Chat Generation API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Generation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get generation stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openrouter.ai/api/v1/generation",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "Generation identifier returned in chat completion responses."
+              }
+            ]
+          },
+          "docs": "Retrieves usage statistics for a completed generation including token counts, cost, cached tokens, and reasoning tokens."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

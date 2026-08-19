@@ -1,0 +1,131 @@
+{
+  "item": [
+    {
+      "id": "e7dd1d7e-e9de-400b-b980-e21250e68839",
+      "name": "Generation",
+      "description": {
+        "content": "Query stats and usage for completed generations.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ec5c5b9b-ed9d-43b8-b5ad-3236dc42ce1d",
+          "name": "Get generation stats",
+          "request": {
+            "name": "Get generation stats",
+            "description": {
+              "content": "Retrieves usage statistics for a completed generation including token counts, cost, cached tokens, and reasoning tokens.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "generation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>",
+                  "description": "(Required) Generation identifier returned in chat completion responses."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7b175d59-dc11-4d3a-8644-4dc76fceb2ed",
+              "name": "Generation statistics.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://openrouter.ai/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "358a556c-f135-4557-9a16-c643e645d29c",
+    "name": "OpenRouter Chat Generation API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenRouter provides unified access to hundreds of AI models through a single API endpoint. It implements the OpenAI API specification for chat completions, allowing developers to use any model with the same request and response format. The API also exposes model discovery, generation statistics, credits and balance information, and provisioning endpoints for programmatic key management.\n\nContact Support:\n Name: OpenRouter",
+      "type": "text/plain"
+    }
+  }
+}

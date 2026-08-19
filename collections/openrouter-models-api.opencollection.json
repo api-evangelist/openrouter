@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenRouter Chat Models API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Models",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List available models",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openrouter.ai/api/v1/models"
+          },
+          "docs": "Returns the full list of models available through OpenRouter."
+        },
+        {
+          "info": {
+            "name": "List endpoints for a model",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openrouter.ai/api/v1/models/:author/:slug/endpoints",
+            "params": [
+              {
+                "name": "author",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns all provider endpoints serving the specified model with per-endpoint pricing, context length, and capabilities."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
