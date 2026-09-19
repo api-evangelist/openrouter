@@ -71,6 +71,8 @@ apis:
   humanURL: https://openrouter.ai/
   baseURL: https://openrouter.ai/api/v1
   tags:
+  - Credit
+  tags_raw:
   - Credits
   properties:
   - type: OpenAPI
@@ -227,6 +229,11 @@ apis:
     url: https://openrouter.ai/docs/guides/overview/auth/management-api-keys
 name: OpenRouter
 tags:
+  - Artificial Intelligence
+  - Gateways
+  - LLM
+  - Router
+tags_raw:
   - Artificial Intelligence
   - Gateway
   - Large Language Models
