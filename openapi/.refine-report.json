@@ -1,13 +1,7 @@
 {
   "provider": "openrouter",
   "sources": [
-    "openrouter-chat-api-openapi.yml",
-    "openrouter-completions-api-openapi.yml",
-    "openrouter-credits-api-openapi.yml",
-    "openrouter-generation-api-openapi.yml",
-    "openrouter-keys-api-openapi.yml",
-    "openrouter-models-api-openapi.yml",
-    "openrouter-providers-api-openapi.yml"
+    "_original/openrouter-openapi.yml"
   ],
   "outputs": [
     "openrouter-chat-api-openapi.yml",
@@ -21,6 +15,18 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "openrouter-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "openrouter-chat-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "openrouter-completions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "openrouter-credits-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "openrouter-generation-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "openrouter-keys-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "openrouter-models-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "openrouter-providers-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
