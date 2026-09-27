@@ -44,65 +44,6 @@ paths:
                 description: Server-Sent Events stream of partial completions.
 components:
   schemas:
-    ChatMessage:
-      type: object
-      required:
-      - role
-      properties:
-        role:
-          type: string
-          enum:
-          - system
-          - user
-          - assistant
-          - tool
-        content:
-          oneOf:
-          - type: string
-          - type: array
-            items:
-              type: object
-        name:
-          type: string
-        tool_call_id:
-          type: string
-    ChatCompletionResponse:
-      type: object
-      properties:
-        id:
-          type: string
-        object:
-          type: string
-        created:
-          type: integer
-        model:
-          type: string
-        choices:
-          type: array
-          items:
-            type: object
-            properties:
-              index:
-                type: integer
-              message:
-                $ref: '#/components/schemas/ChatMessage'
-              finish_reason:
-                type: string
-                enum:
-                - stop
-                - length
-                - tool_calls
-                - content_filter
-                - error
-        usage:
-          type: object
-          properties:
-            prompt_tokens:
-              type: integer
-            completion_tokens:
-              type: integer
-            total_tokens:
-              type: integer
     ChatCompletionRequest:
       type: object
       required:
@@ -143,6 +84,65 @@ components:
           items:
             type: object
         user:
+          type: string
+    ChatCompletionResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        object:
+          type: string
+        created:
+          type: integer
+        model:
+          type: string
+        choices:
+          type: array
+          items:
+            type: object
+            properties:
+              index:
+                type: integer
+              message:
+                $ref: '#/components/schemas/ChatMessage'
+              finish_reason:
+                type: string
+                enum:
+                - stop
+                - length
+                - tool_calls
+                - content_filter
+                - error
+        usage:
+          type: object
+          properties:
+            prompt_tokens:
+              type: integer
+            completion_tokens:
+              type: integer
+            total_tokens:
+              type: integer
+    ChatMessage:
+      type: object
+      required:
+      - role
+      properties:
+        role:
+          type: string
+          enum:
+          - system
+          - user
+          - assistant
+          - tool
+        content:
+          oneOf:
+          - type: string
+          - type: array
+            items:
+              type: object
+        name:
+          type: string
+        tool_call_id:
           type: string
   securitySchemes:
     BearerAuth:
