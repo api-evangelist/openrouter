@@ -44,6 +44,28 @@ paths:
                 description: Server-Sent Events stream of partial completions.
 components:
   schemas:
+    ChatMessage:
+      type: object
+      required:
+      - role
+      properties:
+        role:
+          type: string
+          enum:
+          - system
+          - user
+          - assistant
+          - tool
+        content:
+          oneOf:
+          - type: string
+          - type: array
+            items:
+              type: object
+        name:
+          type: string
+        tool_call_id:
+          type: string
     ChatCompletionRequest:
       type: object
       required:
@@ -122,28 +144,6 @@ components:
               type: integer
             total_tokens:
               type: integer
-    ChatMessage:
-      type: object
-      required:
-      - role
-      properties:
-        role:
-          type: string
-          enum:
-          - system
-          - user
-          - assistant
-          - tool
-        content:
-          oneOf:
-          - type: string
-          - type: array
-            items:
-              type: object
-        name:
-          type: string
-        tool_call_id:
-          type: string
   securitySchemes:
     BearerAuth:
       type: http
