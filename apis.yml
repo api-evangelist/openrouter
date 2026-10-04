@@ -1,38 +1,6 @@
 aid: openrouter
 url: https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/apis.yml
 apis:
-- aid: openrouter:openrouter-chat-api
-  name: OpenRouter Chat API
-  description: Chat completion endpoints (OpenAI-compatible).
-  humanURL: https://openrouter.ai/
-  baseURL: https://openrouter.ai/api/v1
-  tags:
-  - Chat
-  properties:
-  - type: OpenAPI
-    url: openapi/openrouter-chat-api-openapi.yml
-  - type: Documentation
-    url: https://openrouter.ai/
-  - type: Documentation
-    url: https://openrouter.ai/docs/api/reference/overview
-  - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/json-schema/openrouter-chat-message-schema.json
-  - type: JSONLDContext
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/json-ld/openrouter-context.jsonld
-  - type: Documentation
-    url: https://openrouter.ai/docs/api/reference/parameters
-  - type: Documentation
-    url: https://openrouter.ai/docs/api/reference/streaming
-  - type: Documentation
-    url: https://openrouter.ai/docs/api/api-reference/models/get-models
-  - type: Documentation
-    url: https://openrouter.ai/docs/guides/overview/models
-  - type: Documentation
-    url: https://openrouter.ai/docs/guides/overview/auth/provisioning-api-keys
-  - type: Documentation
-    url: https://openrouter.ai/docs/guides/overview/auth/management-api-keys
 - aid: openrouter:openrouter-completions-api
   name: OpenRouter Completions API
   description: Legacy completions endpoint.
@@ -205,6 +173,38 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/openrouter-providers-api-openapi.yml
+  - type: Documentation
+    url: https://openrouter.ai/
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/reference/overview
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/json-schema/openrouter-chat-message-schema.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/openrouter/refs/heads/main/json-ld/openrouter-context.jsonld
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/reference/parameters
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/reference/streaming
+  - type: Documentation
+    url: https://openrouter.ai/docs/api/api-reference/models/get-models
+  - type: Documentation
+    url: https://openrouter.ai/docs/guides/overview/models
+  - type: Documentation
+    url: https://openrouter.ai/docs/guides/overview/auth/provisioning-api-keys
+  - type: Documentation
+    url: https://openrouter.ai/docs/guides/overview/auth/management-api-keys
+- aid: openrouter:openrouter-chat-completions-api
+  name: OpenRouter Chat Completions API
+  description: Chat completion endpoints (OpenAI-compatible).
+  humanURL: https://openrouter.ai/
+  baseURL: https://openrouter.ai/api/v1
+  tags:
+  - Chat Completions
+  properties:
+  - type: OpenAPI
+    url: openapi/openrouter-chat-completions-api-openapi.yml
   - type: Documentation
     url: https://openrouter.ai/
   - type: Documentation

@@ -15,7 +15,7 @@ servers:
 security:
 - BearerAuth: []
 tags:
-- name: Chat
+- name: Chat Completions
   description: Chat completion endpoints (OpenAI-compatible).
 paths:
   /chat/completions:
@@ -24,7 +24,7 @@ paths:
       summary: Create chat completion
       description: Generates a model response for the given chat conversation. Supports text and image inputs, streaming via Server-Sent Events, tool and function calling, structured outputs, and provider routing.
       tags:
-      - Chat
+      - Chat Completions
       requestBody:
         required: true
         content:
