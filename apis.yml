@@ -273,6 +273,10 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/openrouter.png
 access: 3rd-Party
 common:
+  - type: Plans
+    url: plans/openrouter-plans-pricing.yml
+  - type: FinOps
+    url: finops/openrouter-finops.yml
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/openrouter/overview
   - type: AgenticAccess
