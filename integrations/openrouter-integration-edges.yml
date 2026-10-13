@@ -1016,6 +1016,26 @@ edges:
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
+- partner_name: baidu
+  partner: baidu
+  partner_match: verified-token
+  channel: provider-built
+  direction: provider-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://openrouter.ai/api/v1/models
+  coverage_role:
+  - inference-host
+  router_signals:
+    inference-host:
+      models: 11
+      router_ids:
+      - Baidu
+      tools_share: 0.91
+      structured_output_share: 1.0
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
 - partner_name: coreweave
   partner: coreweave
   partner_match: verified-token
@@ -1052,26 +1072,6 @@ edges:
       router_ids:
       - Crusoe
       tools_share: 1.0
-      structured_output_share: 1.0
-  matched_by: verified-token-table
-  detected_by: sweep-model-routing.py
-  first_seen: '2026-10-13'
-- partner_name: baidu
-  partner: baidu
-  partner_match: verified-token
-  channel: provider-built
-  direction: provider-built
-  type: coverage
-  relationship: system-coverage
-  evidence: https://openrouter.ai/api/v1/models
-  coverage_role:
-  - inference-host
-  router_signals:
-    inference-host:
-      models: 11
-      router_ids:
-      - Baidu
-      tools_share: 0.91
       structured_output_share: 1.0
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py

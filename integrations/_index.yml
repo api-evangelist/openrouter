@@ -465,6 +465,17 @@
   relationship: system-coverage
   status: not-a-workflow
   arazzo: null
+- slug: openrouter-baidu
+  label: baidu
+  partner: baidu
+  partner_name: baidu
+  type: coverage
+  channel: provider-built
+  evidence: https://openrouter.ai/api/v1/models
+  source: edge
+  relationship: system-coverage
+  status: not-a-workflow
+  arazzo: null
 - slug: openrouter-coreweave
   label: coreweave
   partner: coreweave
@@ -480,17 +491,6 @@
   label: crusoe
   partner: crusoe
   partner_name: crusoe
-  type: coverage
-  channel: provider-built
-  evidence: https://openrouter.ai/api/v1/models
-  source: edge
-  relationship: system-coverage
-  status: not-a-workflow
-  arazzo: null
-- slug: openrouter-baidu
-  label: baidu
-  partner: baidu
-  partner_name: baidu
   type: coverage
   channel: provider-built
   evidence: https://openrouter.ai/api/v1/models
