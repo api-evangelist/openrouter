@@ -25,10 +25,10 @@
   relationship: system-coverage
   status: not-a-workflow
   arazzo: null
-- slug: openrouter-gemini
-  label: gemini
-  partner: gemini
-  partner_name: gemini
+- slug: openrouter-google-gemini
+  label: google-gemini
+  partner: google-gemini
+  partner_name: google-gemini
   type: coverage
   channel: provider-built
   evidence: https://openrouter.ai/api/v1/models
@@ -212,10 +212,10 @@
   relationship: system-coverage
   status: not-a-workflow
   arazzo: null
-- slug: openrouter-thinking-machines-lab
-  label: thinking-machines-lab
-  partner: thinking-machines-lab
-  partner_name: thinking-machines-lab
+- slug: openrouter-thinking-machines
+  label: thinking-machines
+  partner: thinking-machines
+  partner_name: thinking-machines
   type: coverage
   channel: provider-built
   evidence: https://openrouter.ai/api/v1/models
