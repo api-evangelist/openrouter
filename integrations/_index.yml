@@ -715,3 +715,16 @@
     detected: '2026-10-13'
   status: not-a-workflow
   arazzo: null
+- slug: openrouter-stripe-own
+  label: Stripe (own)
+  partner: stripe
+  partner_name: Stripe (own)
+  category: developer_tools
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.stripe.com/apps/openrouter
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null

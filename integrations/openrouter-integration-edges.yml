@@ -1,4 +1,76 @@
 edges:
+- partner_name: Stripe (own)
+  partner: stripe
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.stripe.com/apps/openrouter
+  mirror_of: stripe/integrations/stripe-integration-edges.yml
+  apps:
+  - OpenRouter
+  listing_count: 1
+  detected: '2026-10-15'
+  detected_by: mirror-platform-listings.py
+  category: developer_tools
+- partner_name: liquid-ai
+  partner: liquid-ai
+  partner_match: verified-token
+  channel: provider-built
+  direction: provider-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://openrouter.ai/api/v1/models
+  coverage_role:
+  - inference-host
+  - model-maker
+  router_signals:
+    model-maker:
+      models: 2
+      router_ids:
+      - liquid
+      tools_share: 1.0
+      structured_output_share: 1.0
+    inference-host:
+      models: 2
+      router_ids:
+      - Liquid
+      tools_share: 1.0
+      structured_output_share: 1.0
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+- partner_name: google-gemini
+  partner: google-gemini
+  partner_match: verified-token
+  channel: provider-built
+  direction: provider-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://openrouter.ai/api/v1/models
+  coverage_role:
+  - inference-host
+  - model-maker
+  router_signals:
+    model-maker:
+      models: 46
+      router_ids:
+      - google
+      - ~google
+      tools_share: 0.8
+      structured_output_share: 1.0
+    inference-host:
+      models: 26
+      router_ids:
+      - Google AI Studio
+      tools_share: 0.77
+      structured_output_share: 1.0
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
 - partner_name: stepfun
   partner: stepfun
   partner_match: verified-token
@@ -39,46 +111,18 @@ edges:
   - model-maker
   router_signals:
     model-maker:
-      models: 35
+      models: 34
       router_ids:
       - anthropic
       - ~anthropic
       tools_share: 1.0
-      structured_output_share: 0.94
+      structured_output_share: 0.97
     inference-host:
       models: 41
       router_ids:
       - Anthropic
       - Claude Platform on AWS
       tools_share: 1.0
-      structured_output_share: 1.0
-  matched_by: verified-token-table
-  detected_by: sweep-model-routing.py
-  first_seen: '2026-10-13'
-- partner_name: google-gemini
-  partner: google-gemini
-  partner_match: verified-token
-  channel: provider-built
-  direction: provider-built
-  type: coverage
-  relationship: system-coverage
-  evidence: https://openrouter.ai/api/v1/models
-  coverage_role:
-  - inference-host
-  - model-maker
-  router_signals:
-    model-maker:
-      models: 44
-      router_ids:
-      - google
-      - ~google
-      tools_share: 0.8
-      structured_output_share: 1.0
-    inference-host:
-      models: 25
-      router_ids:
-      - Google AI Studio
-      tools_share: 0.76
       structured_output_share: 1.0
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
@@ -465,33 +509,6 @@ edges:
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
-- partner_name: liquid-ai
-  partner: liquid-ai
-  partner_match: verified-token
-  channel: provider-built
-  direction: provider-built
-  type: coverage
-  relationship: system-coverage
-  evidence: https://openrouter.ai/api/v1/models
-  coverage_role:
-  - inference-host
-  - model-maker
-  router_signals:
-    model-maker:
-      models: 1
-      router_ids:
-      - liquid
-      tools_share: 1.0
-      structured_output_share: 1.0
-    inference-host:
-      models: 1
-      router_ids:
-      - Liquid
-      tools_share: 1.0
-      structured_output_share: 1.0
-  matched_by: verified-token-table
-  detected_by: sweep-model-routing.py
-  first_seen: '2026-10-13'
 - partner_name: thinking-machines
   partner: thinking-machines
   partner_match: verified-token
@@ -670,7 +687,7 @@ edges:
       models: 9
       router_ids:
       - Reka
-      tools_share: 0.89
+      tools_share: 0.78
       structured_output_share: 1.0
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
@@ -714,11 +731,11 @@ edges:
       tools_share: 0.5
       structured_output_share: 0.5
     inference-host:
-      models: 7
+      models: 10
       router_ids:
       - Relace
-      tools_share: 0.86
-      structured_output_share: 0.29
+      tools_share: 0.9
+      structured_output_share: 0.6
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
@@ -848,11 +865,31 @@ edges:
   - inference-host
   router_signals:
     inference-host:
-      models: 55
+      models: 57
       router_ids:
       - Google
       tools_share: 0.89
       structured_output_share: 1.0
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+- partner_name: deepinfra
+  partner: deepinfra
+  partner_match: verified-token
+  channel: provider-built
+  direction: provider-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://openrouter.ai/api/v1/models
+  coverage_role:
+  - inference-host
+  router_signals:
+    inference-host:
+      models: 76
+      router_ids:
+      - DeepInfra
+      tools_share: 0.82
+      structured_output_share: 0.91
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
@@ -888,11 +925,11 @@ edges:
   - inference-host
   router_signals:
     inference-host:
-      models: 39
+      models: 37
       router_ids:
       - Amazon Bedrock
       tools_share: 0.92
-      structured_output_share: 0.59
+      structured_output_share: 0.62
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
@@ -908,11 +945,11 @@ edges:
   - inference-host
   router_signals:
     inference-host:
-      models: 56
+      models: 52
       router_ids:
       - Novita
-      tools_share: 0.91
-      structured_output_share: 0.75
+      tools_share: 0.9
+      structured_output_share: 0.79
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
@@ -933,26 +970,6 @@ edges:
       - Alibaba
       tools_share: 1.0
       structured_output_share: 1.0
-  matched_by: verified-token-table
-  detected_by: sweep-model-routing.py
-  first_seen: '2026-10-13'
-- partner_name: deepinfra
-  partner: deepinfra
-  partner_match: verified-token
-  channel: provider-built
-  direction: provider-built
-  type: coverage
-  relationship: system-coverage
-  evidence: https://openrouter.ai/api/v1/models
-  coverage_role:
-  - inference-host
-  router_signals:
-    inference-host:
-      models: 74
-      router_ids:
-      - DeepInfra
-      tools_share: 0.81
-      structured_output_share: 0.91
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
@@ -1016,6 +1033,26 @@ edges:
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
+- partner_name: cloudflare
+  partner: cloudflare
+  partner_match: verified-token
+  channel: provider-built
+  direction: provider-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://openrouter.ai/api/v1/models
+  coverage_role:
+  - inference-host
+  router_signals:
+    inference-host:
+      models: 19
+      router_ids:
+      - Cloudflare
+      tools_share: 0.68
+      structured_output_share: 0.89
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
 - partner_name: baidu
   partner: baidu
   partner_match: verified-token
@@ -1052,7 +1089,7 @@ edges:
       router_ids:
       - CoreWeave
       tools_share: 0.89
-      structured_output_share: 0.95
+      structured_output_share: 1.0
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
@@ -1076,8 +1113,8 @@ edges:
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
-- partner_name: cloudflare
-  partner: cloudflare
+- partner_name: prime-intellect
+  partner: prime-intellect
   partner_match: verified-token
   channel: provider-built
   direction: provider-built
@@ -1088,11 +1125,11 @@ edges:
   - inference-host
   router_signals:
     inference-host:
-      models: 19
+      models: 2
       router_ids:
-      - Cloudflare
-      tools_share: 0.68
-      structured_output_share: 0.89
+      - PrimeIntellect
+      tools_share: 1.0
+      structured_output_share: 1.0
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
@@ -1168,7 +1205,7 @@ edges:
   - inference-host
   router_signals:
     inference-host:
-      models: 5
+      models: 4
       router_ids:
       - Modal
       tools_share: 1.0
@@ -1188,10 +1225,10 @@ edges:
   - inference-host
   router_signals:
     inference-host:
-      models: 38
+      models: 39
       router_ids:
       - Parasail
-      tools_share: 0.63
+      tools_share: 0.62
       structured_output_share: 0.97
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
@@ -1233,26 +1270,6 @@ edges:
       - Tenstorrent
       tools_share: 1.0
       structured_output_share: 0.0
-  matched_by: verified-token-table
-  detected_by: sweep-model-routing.py
-  first_seen: '2026-10-13'
-- partner_name: prime-intellect
-  partner: prime-intellect
-  partner_match: verified-token
-  channel: provider-built
-  direction: provider-built
-  type: coverage
-  relationship: system-coverage
-  evidence: https://openrouter.ai/api/v1/models
-  coverage_role:
-  - inference-host
-  router_signals:
-    inference-host:
-      models: 1
-      router_ids:
-      - PrimeIntellect
-      tools_share: 1.0
-      structured_output_share: 1.0
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
@@ -1447,7 +1464,7 @@ edges:
     value: OpenAI-compatible
     note: 'openrouter declares OpenAI compatibility: ''description: Chat completion endpoints (OpenAI-compatible).'''
     detected_by: sweep-model-routing.py
-    detected: '2026-10-13'
+    detected: '2026-10-15'
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
 generated: '2026-10-13'
@@ -1456,3 +1473,6 @@ checked:
 - https://developers.cloudflare.com/ai-gateway/usage/providers/
 - https://github.com/Portkey-AI/gateway/tree/main/src/providers
 - https://openrouter.ai/api/v1/models
+- stripe/integrations/stripe-integration-edges.yml
+source:
+- stripe/integrations/stripe-integration-edges.yml
