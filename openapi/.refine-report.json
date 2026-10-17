@@ -12,16 +12,19 @@
     "openrouter-models-api-openapi.yml",
     "openrouter-providers-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
   "notes": [
     "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
     "openrouter-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "superseded outputs removed: openrouter-chat-completions-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 7 total)"
   ],
   "skipped": [
-    "openrouter-chat-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "openrouter-chat-completions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "openrouter-completions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "openrouter-credits-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "openrouter-generation-api-openapi.yml: previously refined output, superseded by openapi/_original/",
