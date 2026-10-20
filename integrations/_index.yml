@@ -16,6 +16,50 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: openrouter-minimax-ai
+  label: minimax-ai
+  partner: minimax-ai
+  partner_name: minimax-ai
+  type: coverage
+  channel: provider-built
+  evidence: https://openrouter.ai/api/v1/models
+  source: edge
+  relationship: system-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: openrouter-deepseek
+  label: deepseek
+  partner: deepseek
+  partner_name: deepseek
+  type: coverage
+  channel: provider-built
+  evidence: https://openrouter.ai/api/v1/models
+  source: edge
+  relationship: system-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: openrouter-inception
+  label: inception
+  partner: inception
+  partner_name: inception
+  type: coverage
+  channel: provider-built
+  evidence: https://openrouter.ai/api/v1/models
+  source: edge
+  relationship: system-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: openrouter-nvidia
+  label: nvidia
+  partner: nvidia
+  partner_name: nvidia
+  type: coverage
+  channel: provider-built
+  evidence: https://openrouter.ai/api/v1/models
+  source: edge
+  relationship: system-coverage
+  status: not-a-workflow
+  arazzo: null
 - slug: openrouter-liquid-ai
   label: liquid-ai
   partner: liquid-ai
@@ -148,17 +192,6 @@
   relationship: system-coverage
   status: not-a-workflow
   arazzo: null
-- slug: openrouter-nvidia
-  label: nvidia
-  partner: nvidia
-  partner_name: nvidia
-  type: coverage
-  channel: provider-built
-  evidence: https://openrouter.ai/api/v1/models
-  source: edge
-  relationship: system-coverage
-  status: not-a-workflow
-  arazzo: null
 - slug: openrouter-xiaomi
   label: xiaomi
   partner: xiaomi
@@ -181,32 +214,10 @@
   relationship: system-coverage
   status: not-a-workflow
   arazzo: null
-- slug: openrouter-deepseek
-  label: deepseek
-  partner: deepseek
-  partner_name: deepseek
-  type: coverage
-  channel: provider-built
-  evidence: https://openrouter.ai/api/v1/models
-  source: edge
-  relationship: system-coverage
-  status: not-a-workflow
-  arazzo: null
 - slug: openrouter-sakana-ai
   label: sakana-ai
   partner: sakana-ai
   partner_name: sakana-ai
-  type: coverage
-  channel: provider-built
-  evidence: https://openrouter.ai/api/v1/models
-  source: edge
-  relationship: system-coverage
-  status: not-a-workflow
-  arazzo: null
-- slug: openrouter-inception
-  label: inception
-  partner: inception
-  partner_name: inception
   type: coverage
   channel: provider-built
   evidence: https://openrouter.ai/api/v1/models
@@ -262,17 +273,6 @@
   label: moonshot-ai
   partner: moonshot-ai
   partner_name: moonshot-ai
-  type: coverage
-  channel: provider-built
-  evidence: https://openrouter.ai/api/v1/models
-  source: edge
-  relationship: system-coverage
-  status: not-a-workflow
-  arazzo: null
-- slug: openrouter-minimax-ai
-  label: minimax-ai
-  partner: minimax-ai
-  partner_name: minimax-ai
   type: coverage
   channel: provider-built
   evidence: https://openrouter.ai/api/v1/models
@@ -379,6 +379,149 @@
   relationship: system-coverage
   status: not-a-workflow
   arazzo: null
+- slug: openrouter-deepinfra
+  label: deepinfra
+  partner: deepinfra
+  partner_name: deepinfra
+  type: coverage
+  channel: provider-built
+  evidence: https://openrouter.ai/api/v1/models
+  source: edge
+  relationship: system-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: openrouter-decart
+  label: decart
+  partner: decart
+  partner_name: decart
+  type: coverage
+  channel: provider-built
+  evidence: https://openrouter.ai/api/v1/models
+  source: edge
+  relationship: system-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: openrouter-cloudflare
+  label: cloudflare
+  partner: cloudflare
+  partner_name: cloudflare
+  type: coverage
+  channel: provider-built
+  evidence: https://openrouter.ai/api/v1/models
+  source: edge
+  relationship: system-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: openrouter-alibaba
+  label: alibaba
+  partner: alibaba
+  partner_name: alibaba
+  type: coverage
+  channel: provider-built
+  evidence: https://openrouter.ai/api/v1/models
+  source: edge
+  relationship: system-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: openrouter-crusoe
+  label: crusoe
+  partner: crusoe
+  partner_name: crusoe
+  type: coverage
+  channel: provider-built
+  evidence: https://openrouter.ai/api/v1/models
+  source: edge
+  relationship: system-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: openrouter-together-ai
+  label: together-ai
+  partner: together-ai
+  partner_name: together-ai
+  type: coverage
+  channel: provider-built
+  evidence: https://openrouter.ai/api/v1/models
+  source: edge
+  relationship: system-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: openrouter-prime-intellect
+  label: prime-intellect
+  partner: prime-intellect
+  partner_name: prime-intellect
+  type: coverage
+  channel: provider-built
+  evidence: https://openrouter.ai/api/v1/models
+  source: edge
+  relationship: system-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: openrouter-baseten
+  label: baseten
+  partner: baseten
+  partner_name: baseten
+  type: coverage
+  channel: provider-built
+  evidence: https://openrouter.ai/api/v1/models
+  source: edge
+  relationship: system-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: openrouter-parasail-ai
+  label: parasail-ai
+  partner: parasail-ai
+  partner_name: parasail-ai
+  type: coverage
+  channel: provider-built
+  evidence: https://openrouter.ai/api/v1/models
+  source: edge
+  relationship: system-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: openrouter-nebius
+  label: nebius
+  partner: nebius
+  partner_name: nebius
+  type: coverage
+  channel: provider-built
+  evidence: https://openrouter.ai/api/v1/models
+  source: edge
+  relationship: system-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: openrouter-coreweave
+  label: coreweave
+  partner: coreweave
+  partner_name: coreweave
+  type: coverage
+  channel: provider-built
+  evidence: https://openrouter.ai/api/v1/models
+  source: edge
+  relationship: system-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: openrouter-modal-labs
+  label: modal-labs
+  partner: modal-labs
+  partner_name: modal-labs
+  type: coverage
+  channel: provider-built
+  evidence: https://openrouter.ai/api/v1/models
+  source: edge
+  relationship: system-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: openrouter-nvidia-nim
+  label: nvidia-nim
+  partner: nvidia-nim
+  partner_name: nvidia-nim
+  type: coverage
+  channel: provider-built
+  evidence: https://openrouter.ai/api/v1/models
+  source: edge
+  relationship: system-coverage
+  status: not-a-workflow
+  arazzo: null
 - slug: openrouter-google-vertex-ai
   label: google-vertex-ai
   partner: google-vertex-ai
@@ -390,10 +533,10 @@
   relationship: system-coverage
   status: not-a-workflow
   arazzo: null
-- slug: openrouter-deepinfra
-  label: deepinfra
-  partner: deepinfra
-  partner_name: deepinfra
+- slug: openrouter-featherless
+  label: featherless
+  partner: featherless
+  partner_name: featherless
   type: coverage
   channel: provider-built
   evidence: https://openrouter.ai/api/v1/models
@@ -434,32 +577,10 @@
   relationship: system-coverage
   status: not-a-workflow
   arazzo: null
-- slug: openrouter-alibaba
-  label: alibaba
-  partner: alibaba
-  partner_name: alibaba
-  type: coverage
-  channel: provider-built
-  evidence: https://openrouter.ai/api/v1/models
-  source: edge
-  relationship: system-coverage
-  status: not-a-workflow
-  arazzo: null
 - slug: openrouter-io-net
   label: io-net
   partner: io-net
   partner_name: io-net
-  type: coverage
-  channel: provider-built
-  evidence: https://openrouter.ai/api/v1/models
-  source: edge
-  relationship: system-coverage
-  status: not-a-workflow
-  arazzo: null
-- slug: openrouter-decart
-  label: decart
-  partner: decart
-  partner_name: decart
   type: coverage
   channel: provider-built
   evidence: https://openrouter.ai/api/v1/models
@@ -478,17 +599,6 @@
   relationship: system-coverage
   status: not-a-workflow
   arazzo: null
-- slug: openrouter-cloudflare
-  label: cloudflare
-  partner: cloudflare
-  partner_name: cloudflare
-  type: coverage
-  channel: provider-built
-  evidence: https://openrouter.ai/api/v1/models
-  source: edge
-  relationship: system-coverage
-  status: not-a-workflow
-  arazzo: null
 - slug: openrouter-baidu
   label: baidu
   partner: baidu
@@ -500,87 +610,10 @@
   relationship: system-coverage
   status: not-a-workflow
   arazzo: null
-- slug: openrouter-coreweave
-  label: coreweave
-  partner: coreweave
-  partner_name: coreweave
-  type: coverage
-  channel: provider-built
-  evidence: https://openrouter.ai/api/v1/models
-  source: edge
-  relationship: system-coverage
-  status: not-a-workflow
-  arazzo: null
-- slug: openrouter-crusoe
-  label: crusoe
-  partner: crusoe
-  partner_name: crusoe
-  type: coverage
-  channel: provider-built
-  evidence: https://openrouter.ai/api/v1/models
-  source: edge
-  relationship: system-coverage
-  status: not-a-workflow
-  arazzo: null
-- slug: openrouter-prime-intellect
-  label: prime-intellect
-  partner: prime-intellect
-  partner_name: prime-intellect
-  type: coverage
-  channel: provider-built
-  evidence: https://openrouter.ai/api/v1/models
-  source: edge
-  relationship: system-coverage
-  status: not-a-workflow
-  arazzo: null
-- slug: openrouter-baseten
-  label: baseten
-  partner: baseten
-  partner_name: baseten
-  type: coverage
-  channel: provider-built
-  evidence: https://openrouter.ai/api/v1/models
-  source: edge
-  relationship: system-coverage
-  status: not-a-workflow
-  arazzo: null
-- slug: openrouter-together-ai
-  label: together-ai
-  partner: together-ai
-  partner_name: together-ai
-  type: coverage
-  channel: provider-built
-  evidence: https://openrouter.ai/api/v1/models
-  source: edge
-  relationship: system-coverage
-  status: not-a-workflow
-  arazzo: null
 - slug: openrouter-siliconflow
   label: siliconflow
   partner: siliconflow
   partner_name: siliconflow
-  type: coverage
-  channel: provider-built
-  evidence: https://openrouter.ai/api/v1/models
-  source: edge
-  relationship: system-coverage
-  status: not-a-workflow
-  arazzo: null
-- slug: openrouter-modal-labs
-  label: modal-labs
-  partner: modal-labs
-  partner_name: modal-labs
-  type: coverage
-  channel: provider-built
-  evidence: https://openrouter.ai/api/v1/models
-  source: edge
-  relationship: system-coverage
-  status: not-a-workflow
-  arazzo: null
-- slug: openrouter-parasail-ai
-  label: parasail-ai
-  partner: parasail-ai
-  partner_name: parasail-ai
   type: coverage
   channel: provider-built
   evidence: https://openrouter.ai/api/v1/models
@@ -636,28 +669,6 @@
   label: byteplus
   partner: byteplus
   partner_name: byteplus
-  type: coverage
-  channel: provider-built
-  evidence: https://openrouter.ai/api/v1/models
-  source: edge
-  relationship: system-coverage
-  status: not-a-workflow
-  arazzo: null
-- slug: openrouter-nvidia-nim
-  label: nvidia-nim
-  partner: nvidia-nim
-  partner_name: nvidia-nim
-  type: coverage
-  channel: provider-built
-  evidence: https://openrouter.ai/api/v1/models
-  source: edge
-  relationship: system-coverage
-  status: not-a-workflow
-  arazzo: null
-- slug: openrouter-nebius
-  label: nebius
-  partner: nebius
-  partner_name: nebius
   type: coverage
   channel: provider-built
   evidence: https://openrouter.ai/api/v1/models
@@ -725,7 +736,7 @@
     value: OpenAI-compatible
     note: 'openrouter declares OpenAI compatibility: ''description: Chat completion endpoints (OpenAI-compatible).'''
     detected_by: sweep-model-routing.py
-    detected: '2026-10-15'
+    detected: '2026-10-19'
   status: not-a-workflow
   arazzo: null
 - slug: openrouter-zapier
@@ -760,7 +771,7 @@
   type: marketplace
   marketplace: pipedream-components
   channel: open-source-node
-  evidence: https://github.com/PipedreamHQ/pipedream/tree/94800dd6de6640b942c65ea7ee655f71ac56d438/components/openrouter
+  evidence: https://github.com/PipedreamHQ/pipedream/tree/d5872355ef27b4efa769f05352f2820c299a456e/components/openrouter
   source: edge
   relationship: ipaas-bridge
   contract_reference:

@@ -16,6 +16,108 @@ edges:
   detected: '2026-10-15'
   detected_by: mirror-platform-listings.py
   category: developer_tools
+- partner_name: minimax-ai
+  partner: minimax-ai
+  partner_match: verified-token
+  channel: provider-built
+  direction: provider-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://openrouter.ai/api/v1/models
+  coverage_role:
+  - inference-host
+  - model-maker
+  router_signals:
+    model-maker:
+      models: 9
+      router_ids:
+      - minimax
+      tools_share: 0.78
+      structured_output_share: 0.67
+    inference-host:
+      models: 9
+      router_ids:
+      - Minimax
+      tools_share: 0.67
+      structured_output_share: 0.56
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+- partner_name: deepseek
+  partner: deepseek
+  partner_match: verified-token
+  channel: provider-built
+  direction: provider-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://openrouter.ai/api/v1/models
+  coverage_role:
+  - inference-host
+  - model-maker
+  router_signals:
+    model-maker:
+      models: 18
+      router_ids:
+      - deepseek
+      - ~deepseek
+      tools_share: 1.0
+      structured_output_share: 1.0
+    inference-host:
+      models: 2
+      router_ids:
+      - DeepSeek
+      tools_share: 1.0
+      structured_output_share: 1.0
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+- partner_name: inception
+  partner: inception
+  partner_match: verified-token
+  channel: provider-built
+  direction: provider-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://openrouter.ai/api/v1/models
+  coverage_role:
+  - inference-host
+  - model-maker
+  router_signals:
+    model-maker:
+      models: 3
+      router_ids:
+      - inception
+      tools_share: 1.0
+      structured_output_share: 1.0
+    inference-host:
+      models: 3
+      router_ids:
+      - Inception
+      tools_share: 1.0
+      structured_output_share: 1.0
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+- partner_name: nvidia
+  partner: nvidia
+  partner_match: verified-token
+  channel: provider-built
+  direction: provider-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://openrouter.ai/api/v1/models
+  coverage_role:
+  - model-maker
+  router_signals:
+    model-maker:
+      models: 13
+      router_ids:
+      - nvidia
+      tools_share: 0.77
+      structured_output_share: 0.54
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
 - partner_name: liquid-ai
   partner: liquid-ai
   partner_match: verified-token
@@ -221,7 +323,7 @@ edges:
       tools_share: 1.0
       structured_output_share: 1.0
     inference-host:
-      models: 5
+      models: 7
       router_ids:
       - Fireworks
       tools_share: 1.0
@@ -269,7 +371,7 @@ edges:
   - model-maker
   router_signals:
     model-maker:
-      models: 42
+      models: 43
       router_ids:
       - qwen
       tools_share: 0.95
@@ -331,26 +433,6 @@ edges:
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
-- partner_name: nvidia
-  partner: nvidia
-  partner_match: verified-token
-  channel: provider-built
-  direction: provider-built
-  type: coverage
-  relationship: system-coverage
-  evidence: https://openrouter.ai/api/v1/models
-  coverage_role:
-  - model-maker
-  router_signals:
-    model-maker:
-      models: 11
-      router_ids:
-      - nvidia
-      tools_share: 0.73
-      structured_output_share: 0.45
-  matched_by: verified-token-table
-  detected_by: sweep-model-routing.py
-  first_seen: '2026-10-13'
 - partner_name: xiaomi
   partner: xiaomi
   partner_match: verified-token
@@ -406,34 +488,6 @@ edges:
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
-- partner_name: deepseek
-  partner: deepseek
-  partner_match: verified-token
-  channel: provider-built
-  direction: provider-built
-  type: coverage
-  relationship: system-coverage
-  evidence: https://openrouter.ai/api/v1/models
-  coverage_role:
-  - inference-host
-  - model-maker
-  router_signals:
-    model-maker:
-      models: 18
-      router_ids:
-      - deepseek
-      - ~deepseek
-      tools_share: 1.0
-      structured_output_share: 1.0
-    inference-host:
-      models: 2
-      router_ids:
-      - DeepSeek
-      tools_share: 1.0
-      structured_output_share: 1.0
-  matched_by: verified-token-table
-  detected_by: sweep-model-routing.py
-  first_seen: '2026-10-13'
 - partner_name: sakana-ai
   partner: sakana-ai
   partner_match: verified-token
@@ -456,33 +510,6 @@ edges:
       models: 4
       router_ids:
       - Sakana AI
-      tools_share: 1.0
-      structured_output_share: 1.0
-  matched_by: verified-token-table
-  detected_by: sweep-model-routing.py
-  first_seen: '2026-10-13'
-- partner_name: inception
-  partner: inception
-  partner_match: verified-token
-  channel: provider-built
-  direction: provider-built
-  type: coverage
-  relationship: system-coverage
-  evidence: https://openrouter.ai/api/v1/models
-  coverage_role:
-  - inference-host
-  - model-maker
-  router_signals:
-    model-maker:
-      models: 2
-      router_ids:
-      - inception
-      tools_share: 1.0
-      structured_output_share: 1.0
-    inference-host:
-      models: 2
-      router_ids:
-      - Inception
       tools_share: 1.0
       structured_output_share: 1.0
   matched_by: verified-token-table
@@ -611,33 +638,6 @@ edges:
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
-- partner_name: minimax-ai
-  partner: minimax-ai
-  partner_match: verified-token
-  channel: provider-built
-  direction: provider-built
-  type: coverage
-  relationship: system-coverage
-  evidence: https://openrouter.ai/api/v1/models
-  coverage_role:
-  - inference-host
-  - model-maker
-  router_signals:
-    model-maker:
-      models: 8
-      router_ids:
-      - minimax
-      tools_share: 0.75
-      structured_output_share: 0.62
-    inference-host:
-      models: 8
-      router_ids:
-      - Minimax
-      tools_share: 0.62
-      structured_output_share: 0.5
-  matched_by: verified-token-table
-  detected_by: sweep-model-routing.py
-  first_seen: '2026-10-13'
 - partner_name: arcee-ai
   partner: arcee-ai
   partner_match: verified-token
@@ -684,10 +684,10 @@ edges:
       tools_share: 0.5
       structured_output_share: 1.0
     inference-host:
-      models: 9
+      models: 8
       router_ids:
       - Reka
-      tools_share: 0.78
+      tools_share: 0.88
       structured_output_share: 1.0
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
@@ -731,11 +731,11 @@ edges:
       tools_share: 0.5
       structured_output_share: 0.5
     inference-host:
-      models: 10
+      models: 13
       router_ids:
       - Relace
-      tools_share: 0.9
-      structured_output_share: 0.6
+      tools_share: 0.92
+      structured_output_share: 0.77
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
@@ -823,13 +823,13 @@ edges:
       router_ids:
       - morph
       tools_share: 0.0
-      structured_output_share: 0.5
+      structured_output_share: 1.0
     inference-host:
-      models: 7
+      models: 8
       router_ids:
       - Morph
-      tools_share: 0.71
-      structured_output_share: 0.86
+      tools_share: 0.75
+      structured_output_share: 1.0
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
@@ -853,6 +853,266 @@ edges:
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
+- partner_name: deepinfra
+  partner: deepinfra
+  partner_match: verified-token
+  channel: provider-built
+  direction: provider-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://openrouter.ai/api/v1/models
+  coverage_role:
+  - inference-host
+  router_signals:
+    inference-host:
+      models: 78
+      router_ids:
+      - DeepInfra
+      tools_share: 0.83
+      structured_output_share: 0.92
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+- partner_name: decart
+  partner: decart
+  partner_match: verified-token
+  channel: provider-built
+  direction: provider-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://openrouter.ai/api/v1/models
+  coverage_role:
+  - inference-host
+  router_signals:
+    inference-host:
+      models: 5
+      router_ids:
+      - Decart
+      tools_share: 1.0
+      structured_output_share: 1.0
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+- partner_name: cloudflare
+  partner: cloudflare
+  partner_match: verified-token
+  channel: provider-built
+  direction: provider-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://openrouter.ai/api/v1/models
+  coverage_role:
+  - inference-host
+  router_signals:
+    inference-host:
+      models: 19
+      router_ids:
+      - Cloudflare
+      tools_share: 0.68
+      structured_output_share: 0.89
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+- partner_name: alibaba
+  partner: alibaba
+  partner_match: verified-token
+  channel: provider-built
+  direction: provider-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://openrouter.ai/api/v1/models
+  coverage_role:
+  - inference-host
+  router_signals:
+    inference-host:
+      models: 34
+      router_ids:
+      - Alibaba
+      tools_share: 1.0
+      structured_output_share: 1.0
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+- partner_name: crusoe
+  partner: crusoe
+  partner_match: verified-token
+  channel: provider-built
+  direction: provider-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://openrouter.ai/api/v1/models
+  coverage_role:
+  - inference-host
+  router_signals:
+    inference-host:
+      models: 9
+      router_ids:
+      - Crusoe
+      tools_share: 1.0
+      structured_output_share: 1.0
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+- partner_name: together-ai
+  partner: together-ai
+  partner_match: verified-token
+  channel: provider-built
+  direction: provider-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://openrouter.ai/api/v1/models
+  coverage_role:
+  - inference-host
+  router_signals:
+    inference-host:
+      models: 19
+      router_ids:
+      - Together
+      tools_share: 1.0
+      structured_output_share: 0.95
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+- partner_name: prime-intellect
+  partner: prime-intellect
+  partner_match: verified-token
+  channel: provider-built
+  direction: provider-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://openrouter.ai/api/v1/models
+  coverage_role:
+  - inference-host
+  router_signals:
+    inference-host:
+      models: 6
+      router_ids:
+      - PrimeIntellect
+      tools_share: 0.67
+      structured_output_share: 0.67
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+- partner_name: baseten
+  partner: baseten
+  partner_match: verified-token
+  channel: provider-built
+  direction: provider-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://openrouter.ai/api/v1/models
+  coverage_role:
+  - inference-host
+  router_signals:
+    inference-host:
+      models: 11
+      router_ids:
+      - BaseTen
+      tools_share: 0.91
+      structured_output_share: 0.55
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+- partner_name: parasail-ai
+  partner: parasail-ai
+  partner_match: verified-token
+  channel: provider-built
+  direction: provider-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://openrouter.ai/api/v1/models
+  coverage_role:
+  - inference-host
+  router_signals:
+    inference-host:
+      models: 40
+      router_ids:
+      - Parasail
+      tools_share: 0.62
+      structured_output_share: 0.97
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+- partner_name: nebius
+  partner: nebius
+  partner_match: verified-token
+  channel: provider-built
+  direction: provider-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://openrouter.ai/api/v1/models
+  coverage_role:
+  - inference-host
+  router_signals:
+    inference-host:
+      models: 13
+      router_ids:
+      - Nebius
+      tools_share: 0.85
+      structured_output_share: 1.0
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+- partner_name: coreweave
+  partner: coreweave
+  partner_match: verified-token
+  channel: provider-built
+  direction: provider-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://openrouter.ai/api/v1/models
+  coverage_role:
+  - inference-host
+  router_signals:
+    inference-host:
+      models: 22
+      router_ids:
+      - CoreWeave
+      tools_share: 0.91
+      structured_output_share: 1.0
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+- partner_name: modal-labs
+  partner: modal-labs
+  partner_match: verified-token
+  channel: provider-built
+  direction: provider-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://openrouter.ai/api/v1/models
+  coverage_role:
+  - inference-host
+  router_signals:
+    inference-host:
+      models: 5
+      router_ids:
+      - Modal
+      tools_share: 1.0
+      structured_output_share: 1.0
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+- partner_name: nvidia-nim
+  partner: nvidia-nim
+  partner_match: verified-token
+  channel: provider-built
+  direction: provider-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://openrouter.ai/api/v1/models
+  coverage_role:
+  - inference-host
+  router_signals:
+    inference-host:
+      models: 6
+      router_ids:
+      - Nvidia
+      tools_share: 0.83
+      structured_output_share: 0.33
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
 - partner_name: google-vertex-ai
   partner: google-vertex-ai
   partner_match: verified-token
@@ -873,8 +1133,8 @@ edges:
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
-- partner_name: deepinfra
-  partner: deepinfra
+- partner_name: featherless
+  partner: featherless
   partner_match: verified-token
   channel: provider-built
   direction: provider-built
@@ -885,14 +1145,14 @@ edges:
   - inference-host
   router_signals:
     inference-host:
-      models: 76
+      models: 1
       router_ids:
-      - DeepInfra
-      tools_share: 0.82
-      structured_output_share: 0.91
+      - Featherless
+      tools_share: 1.0
+      structured_output_share: 1.0
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
-  first_seen: '2026-10-13'
+  first_seen: '2026-10-19'
 - partner_name: microsoft-azure-openai
   partner: microsoft-azure-openai
   partner_match: verified-token
@@ -925,11 +1185,11 @@ edges:
   - inference-host
   router_signals:
     inference-host:
-      models: 37
+      models: 38
       router_ids:
       - Amazon Bedrock
       tools_share: 0.92
-      structured_output_share: 0.62
+      structured_output_share: 0.61
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
@@ -945,31 +1205,11 @@ edges:
   - inference-host
   router_signals:
     inference-host:
-      models: 52
+      models: 47
       router_ids:
       - Novita
-      tools_share: 0.9
+      tools_share: 0.96
       structured_output_share: 0.79
-  matched_by: verified-token-table
-  detected_by: sweep-model-routing.py
-  first_seen: '2026-10-13'
-- partner_name: alibaba
-  partner: alibaba
-  partner_match: verified-token
-  channel: provider-built
-  direction: provider-built
-  type: coverage
-  relationship: system-coverage
-  evidence: https://openrouter.ai/api/v1/models
-  coverage_role:
-  - inference-host
-  router_signals:
-    inference-host:
-      models: 32
-      router_ids:
-      - Alibaba
-      tools_share: 1.0
-      structured_output_share: 1.0
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
@@ -993,26 +1233,6 @@ edges:
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
-- partner_name: decart
-  partner: decart
-  partner_match: verified-token
-  channel: provider-built
-  direction: provider-built
-  type: coverage
-  relationship: system-coverage
-  evidence: https://openrouter.ai/api/v1/models
-  coverage_role:
-  - inference-host
-  router_signals:
-    inference-host:
-      models: 5
-      router_ids:
-      - Decart
-      tools_share: 1.0
-      structured_output_share: 1.0
-  matched_by: verified-token-table
-  detected_by: sweep-model-routing.py
-  first_seen: '2026-10-13'
 - partner_name: sail-research
   partner: sail-research
   partner_match: verified-token
@@ -1025,31 +1245,11 @@ edges:
   - inference-host
   router_signals:
     inference-host:
-      models: 6
+      models: 8
       router_ids:
       - Sail Research
       tools_share: 1.0
       structured_output_share: 1.0
-  matched_by: verified-token-table
-  detected_by: sweep-model-routing.py
-  first_seen: '2026-10-13'
-- partner_name: cloudflare
-  partner: cloudflare
-  partner_match: verified-token
-  channel: provider-built
-  direction: provider-built
-  type: coverage
-  relationship: system-coverage
-  evidence: https://openrouter.ai/api/v1/models
-  coverage_role:
-  - inference-host
-  router_signals:
-    inference-host:
-      models: 19
-      router_ids:
-      - Cloudflare
-      tools_share: 0.68
-      structured_output_share: 0.89
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
@@ -1073,106 +1273,6 @@ edges:
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
-- partner_name: coreweave
-  partner: coreweave
-  partner_match: verified-token
-  channel: provider-built
-  direction: provider-built
-  type: coverage
-  relationship: system-coverage
-  evidence: https://openrouter.ai/api/v1/models
-  coverage_role:
-  - inference-host
-  router_signals:
-    inference-host:
-      models: 19
-      router_ids:
-      - CoreWeave
-      tools_share: 0.89
-      structured_output_share: 1.0
-  matched_by: verified-token-table
-  detected_by: sweep-model-routing.py
-  first_seen: '2026-10-13'
-- partner_name: crusoe
-  partner: crusoe
-  partner_match: verified-token
-  channel: provider-built
-  direction: provider-built
-  type: coverage
-  relationship: system-coverage
-  evidence: https://openrouter.ai/api/v1/models
-  coverage_role:
-  - inference-host
-  router_signals:
-    inference-host:
-      models: 6
-      router_ids:
-      - Crusoe
-      tools_share: 1.0
-      structured_output_share: 1.0
-  matched_by: verified-token-table
-  detected_by: sweep-model-routing.py
-  first_seen: '2026-10-13'
-- partner_name: prime-intellect
-  partner: prime-intellect
-  partner_match: verified-token
-  channel: provider-built
-  direction: provider-built
-  type: coverage
-  relationship: system-coverage
-  evidence: https://openrouter.ai/api/v1/models
-  coverage_role:
-  - inference-host
-  router_signals:
-    inference-host:
-      models: 2
-      router_ids:
-      - PrimeIntellect
-      tools_share: 1.0
-      structured_output_share: 1.0
-  matched_by: verified-token-table
-  detected_by: sweep-model-routing.py
-  first_seen: '2026-10-13'
-- partner_name: baseten
-  partner: baseten
-  partner_match: verified-token
-  channel: provider-built
-  direction: provider-built
-  type: coverage
-  relationship: system-coverage
-  evidence: https://openrouter.ai/api/v1/models
-  coverage_role:
-  - inference-host
-  router_signals:
-    inference-host:
-      models: 8
-      router_ids:
-      - BaseTen
-      tools_share: 1.0
-      structured_output_share: 0.62
-  matched_by: verified-token-table
-  detected_by: sweep-model-routing.py
-  first_seen: '2026-10-13'
-- partner_name: together-ai
-  partner: together-ai
-  partner_match: verified-token
-  channel: provider-built
-  direction: provider-built
-  type: coverage
-  relationship: system-coverage
-  evidence: https://openrouter.ai/api/v1/models
-  coverage_role:
-  - inference-host
-  router_signals:
-    inference-host:
-      models: 14
-      router_ids:
-      - Together
-      tools_share: 1.0
-      structured_output_share: 0.93
-  matched_by: verified-token-table
-  detected_by: sweep-model-routing.py
-  first_seen: '2026-10-13'
 - partner_name: siliconflow
   partner: siliconflow
   partner_match: verified-token
@@ -1190,46 +1290,6 @@ edges:
       - SiliconFlow
       tools_share: 0.82
       structured_output_share: 0.82
-  matched_by: verified-token-table
-  detected_by: sweep-model-routing.py
-  first_seen: '2026-10-13'
-- partner_name: modal-labs
-  partner: modal-labs
-  partner_match: verified-token
-  channel: provider-built
-  direction: provider-built
-  type: coverage
-  relationship: system-coverage
-  evidence: https://openrouter.ai/api/v1/models
-  coverage_role:
-  - inference-host
-  router_signals:
-    inference-host:
-      models: 4
-      router_ids:
-      - Modal
-      tools_share: 1.0
-      structured_output_share: 1.0
-  matched_by: verified-token-table
-  detected_by: sweep-model-routing.py
-  first_seen: '2026-10-13'
-- partner_name: parasail-ai
-  partner: parasail-ai
-  partner_match: verified-token
-  channel: provider-built
-  direction: provider-built
-  type: coverage
-  relationship: system-coverage
-  evidence: https://openrouter.ai/api/v1/models
-  coverage_role:
-  - inference-host
-  router_signals:
-    inference-host:
-      models: 39
-      router_ids:
-      - Parasail
-      tools_share: 0.62
-      structured_output_share: 0.97
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
@@ -1333,46 +1393,6 @@ edges:
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
-- partner_name: nvidia-nim
-  partner: nvidia-nim
-  partner_match: verified-token
-  channel: provider-built
-  direction: provider-built
-  type: coverage
-  relationship: system-coverage
-  evidence: https://openrouter.ai/api/v1/models
-  coverage_role:
-  - inference-host
-  router_signals:
-    inference-host:
-      models: 5
-      router_ids:
-      - Nvidia
-      tools_share: 0.8
-      structured_output_share: 0.2
-  matched_by: verified-token-table
-  detected_by: sweep-model-routing.py
-  first_seen: '2026-10-13'
-- partner_name: nebius
-  partner: nebius
-  partner_match: verified-token
-  channel: provider-built
-  direction: provider-built
-  type: coverage
-  relationship: system-coverage
-  evidence: https://openrouter.ai/api/v1/models
-  coverage_role:
-  - inference-host
-  router_signals:
-    inference-host:
-      models: 9
-      router_ids:
-      - Nebius
-      tools_share: 0.78
-      structured_output_share: 1.0
-  matched_by: verified-token-table
-  detected_by: sweep-model-routing.py
-  first_seen: '2026-10-13'
 - partner_name: sambanova-systems
   partner: sambanova-systems
   partner_match: verified-token
@@ -1464,7 +1484,7 @@ edges:
     value: OpenAI-compatible
     note: 'openrouter declares OpenAI compatibility: ''description: Chat completion endpoints (OpenAI-compatible).'''
     detected_by: sweep-model-routing.py
-    detected: '2026-10-15'
+    detected: '2026-10-19'
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
 - partner_name: Zapier
@@ -1500,7 +1520,7 @@ edges:
   channel: open-source-node
   relationship: ipaas-bridge
   direction: third-party
-  evidence: https://github.com/PipedreamHQ/pipedream/tree/94800dd6de6640b942c65ea7ee655f71ac56d438/components/openrouter
+  evidence: https://github.com/PipedreamHQ/pipedream/tree/d5872355ef27b4efa769f05352f2820c299a456e/components/openrouter
   category: null
   contract_reference:
     register: Pipedream components (PipedreamHQ/pipedream components/)
@@ -1523,6 +1543,7 @@ method: searched
 checked:
 - https://developers.cloudflare.com/ai-gateway/usage/providers/
 - https://github.com/PipedreamHQ/pipedream/tree/94800dd6de6640b942c65ea7ee655f71ac56d438/components/
+- https://github.com/PipedreamHQ/pipedream/tree/d5872355ef27b4efa769f05352f2820c299a456e/components/
 - https://github.com/Portkey-AI/gateway/tree/main/src/providers
 - https://openrouter.ai/api/v1/models
 - https://zapier.com/api/v4/apps/
